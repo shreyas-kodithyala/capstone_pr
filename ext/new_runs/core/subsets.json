@@ -1,0 +1,423 @@
+{
+ "M1_S1": {
+  "mission": "M1",
+  "subsystem": [
+   "S1"
+  ],
+  "targets": [
+   "channel_61",
+   "channel_62",
+   "channel_63"
+  ],
+  "context": [
+   "channel_14",
+   "channel_19",
+   "channel_30",
+   "channel_31",
+   "channel_33",
+   "channel_34",
+   "channel_50",
+   "channel_60"
+  ],
+  "context_score": {
+   "channel_34": 0.963,
+   "channel_19": 0.917,
+   "channel_33": 0.902,
+   "channel_60": 0.862,
+   "channel_30": 0.858,
+   "channel_31": 0.825,
+   "channel_14": 0.781,
+   "channel_50": 0.569
+  },
+  "context_subsystem": {
+   "channel_34": "S6",
+   "channel_19": "S6",
+   "channel_33": "S6",
+   "channel_60": "S6",
+   "channel_30": "S6",
+   "channel_31": "S6",
+   "channel_14": "S6",
+   "channel_50": "S6"
+  },
+  "context_is_target": {
+   "channel_34": true,
+   "channel_19": true,
+   "channel_33": true,
+   "channel_60": true,
+   "channel_30": true,
+   "channel_31": true,
+   "channel_14": true,
+   "channel_50": true
+  }
+ },
+ "M1_S3": {
+  "mission": "M1",
+  "subsystem": [
+   "S3"
+  ],
+  "targets": [
+   "channel_70",
+   "channel_71",
+   "channel_72",
+   "channel_73",
+   "channel_74",
+   "channel_75",
+   "channel_76"
+  ],
+  "context": [],
+  "context_score": {},
+  "context_subsystem": {},
+  "context_is_target": {}
+ },
+ "M1_S5": {
+  "mission": "M1",
+  "subsystem": [
+   "S5"
+  ],
+  "targets": [
+   "channel_41",
+   "channel_42",
+   "channel_43",
+   "channel_44",
+   "channel_45",
+   "channel_46"
+  ],
+  "context": [
+   "channel_52"
+  ],
+  "context_score": {
+   "channel_52": 0.583
+  },
+  "context_subsystem": {
+   "channel_52": "S6"
+  },
+  "context_is_target": {
+   "channel_52": true
+  }
+ },
+ "M1_S6": {
+  "mission": "M1",
+  "subsystem": [
+   "S6"
+  ],
+  "targets": [
+   "channel_12",
+   "channel_13",
+   "channel_14",
+   "channel_15",
+   "channel_16",
+   "channel_17",
+   "channel_18",
+   "channel_19",
+   "channel_20",
+   "channel_21",
+   "channel_22",
+   "channel_23",
+   "channel_24",
+   "channel_25",
+   "channel_26",
+   "channel_27",
+   "channel_28",
+   "channel_29",
+   "channel_30",
+   "channel_31",
+   "channel_32",
+   "channel_33",
+   "channel_34",
+   "channel_35",
+   "channel_36",
+   "channel_37",
+   "channel_38",
+   "channel_39",
+   "channel_40",
+   "channel_47",
+   "channel_48",
+   "channel_49",
+   "channel_50",
+   "channel_51",
+   "channel_52",
+   "channel_57",
+   "channel_58",
+   "channel_59",
+   "channel_60",
+   "channel_64",
+   "channel_65",
+   "channel_66"
+  ],
+  "context": [
+   "channel_41",
+   "channel_43",
+   "channel_45",
+   "channel_46",
+   "channel_61",
+   "channel_62",
+   "channel_68"
+  ],
+  "context_score": {
+   "channel_68": 1.0,
+   "channel_61": 0.963,
+   "channel_43": 0.583,
+   "channel_41": 0.548,
+   "channel_45": 0.537,
+   "channel_62": 0.496,
+   "channel_46": 0.454
+  },
+  "context_subsystem": {
+   "channel_68": "S1",
+   "channel_61": "S1",
+   "channel_43": "S5",
+   "channel_41": "S5",
+   "channel_45": "S5",
+   "channel_62": "S1",
+   "channel_46": "S5"
+  },
+  "context_is_target": {
+   "channel_68": false,
+   "channel_61": true,
+   "channel_43": true,
+   "channel_41": true,
+   "channel_45": true,
+   "channel_62": true,
+   "channel_46": true
+  }
+ },
+ "M2_S1": {
+  "mission": "M2",
+  "subsystem": [
+   "S1"
+  ],
+  "targets": [
+   "channel_9",
+   "channel_10",
+   "channel_11",
+   "channel_12",
+   "channel_13",
+   "channel_14",
+   "channel_15",
+   "channel_16",
+   "channel_17",
+   "channel_18",
+   "channel_19",
+   "channel_20",
+   "channel_21",
+   "channel_22",
+   "channel_23",
+   "channel_24",
+   "channel_25",
+   "channel_26",
+   "channel_27",
+   "channel_28"
+  ],
+  "context": [
+   "channel_56",
+   "channel_61",
+   "channel_63",
+   "channel_64",
+   "channel_92",
+   "channel_93",
+   "channel_94",
+   "channel_95"
+  ],
+  "context_score": {
+   "channel_94": 0.681,
+   "channel_93": 0.64,
+   "channel_92": 0.628,
+   "channel_95": 0.623,
+   "channel_63": 0.546,
+   "channel_56": 0.541,
+   "channel_61": 0.501,
+   "channel_64": 0.492
+  },
+  "context_subsystem": {
+   "channel_94": "S6",
+   "channel_93": "S6",
+   "channel_92": "S6",
+   "channel_95": "S6",
+   "channel_63": "S1",
+   "channel_56": "S4",
+   "channel_61": "S5",
+   "channel_64": "S1"
+  },
+  "context_is_target": {
+   "channel_94": false,
+   "channel_93": false,
+   "channel_92": false,
+   "channel_95": false,
+   "channel_63": false,
+   "channel_56": false,
+   "channel_61": false,
+   "channel_64": false
+  }
+ },
+ "M2_S2": {
+  "mission": "M2",
+  "subsystem": [
+   "S2"
+  ],
+  "targets": [
+   "channel_96",
+   "channel_97",
+   "channel_98"
+  ],
+  "context": [
+   "channel_9",
+   "channel_50",
+   "channel_52",
+   "channel_53",
+   "channel_57",
+   "channel_61",
+   "channel_74",
+   "channel_92"
+  ],
+  "context_score": {
+   "channel_61": 0.417,
+   "channel_50": 0.313,
+   "channel_57": 0.28,
+   "channel_9": 0.27,
+   "channel_92": 0.257,
+   "channel_53": 0.252,
+   "channel_52": 0.25,
+   "channel_74": 0.242
+  },
+  "context_subsystem": {
+   "channel_61": "S5",
+   "channel_50": "S4",
+   "channel_57": "S4",
+   "channel_9": "S1",
+   "channel_92": "S6",
+   "channel_53": "S4",
+   "channel_52": "S4",
+   "channel_74": "S5"
+  },
+  "context_is_target": {
+   "channel_61": false,
+   "channel_50": false,
+   "channel_57": false,
+   "channel_9": true,
+   "channel_92": false,
+   "channel_53": false,
+   "channel_52": false,
+   "channel_74": true
+  }
+ },
+ "M2_S5": {
+  "mission": "M2",
+  "subsystem": [
+   "S5"
+  ],
+  "targets": [
+   "channel_70",
+   "channel_71",
+   "channel_72",
+   "channel_73",
+   "channel_74",
+   "channel_75",
+   "channel_76",
+   "channel_77",
+   "channel_78",
+   "channel_79",
+   "channel_80",
+   "channel_81",
+   "channel_82",
+   "channel_83",
+   "channel_84",
+   "channel_85"
+  ],
+  "context": [
+   "channel_11",
+   "channel_23",
+   "channel_51",
+   "channel_58",
+   "channel_64",
+   "channel_93",
+   "channel_94",
+   "channel_100"
+  ],
+  "context_score": {
+   "channel_58": 0.992,
+   "channel_64": 0.45,
+   "channel_100": 0.401,
+   "channel_94": 0.352,
+   "channel_51": 0.304,
+   "channel_11": 0.263,
+   "channel_23": 0.257,
+   "channel_93": 0.255
+  },
+  "context_subsystem": {
+   "channel_58": "S6",
+   "channel_64": "S1",
+   "channel_100": "S1",
+   "channel_94": "S6",
+   "channel_51": "S4",
+   "channel_11": "S1",
+   "channel_23": "S1",
+   "channel_93": "S6"
+  },
+  "context_is_target": {
+   "channel_58": true,
+   "channel_64": false,
+   "channel_100": false,
+   "channel_94": false,
+   "channel_51": false,
+   "channel_11": true,
+   "channel_23": true,
+   "channel_93": false
+  }
+ },
+ "M2_S6": {
+  "mission": "M2",
+  "subsystem": [
+   "S6"
+  ],
+  "targets": [
+   "channel_58",
+   "channel_59",
+   "channel_86",
+   "channel_87",
+   "channel_88",
+   "channel_89",
+   "channel_90",
+   "channel_91"
+  ],
+  "context": [
+   "channel_11",
+   "channel_23",
+   "channel_62",
+   "channel_70",
+   "channel_81",
+   "channel_82",
+   "channel_84",
+   "channel_94"
+  ],
+  "context_score": {
+   "channel_82": 0.992,
+   "channel_84": 0.336,
+   "channel_70": 0.323,
+   "channel_94": 0.316,
+   "channel_62": 0.263,
+   "channel_23": 0.259,
+   "channel_11": 0.243,
+   "channel_81": 0.24
+  },
+  "context_subsystem": {
+   "channel_82": "S5",
+   "channel_84": "S5",
+   "channel_70": "S5",
+   "channel_94": "S6",
+   "channel_62": "S5",
+   "channel_23": "S1",
+   "channel_11": "S1",
+   "channel_81": "S5"
+  },
+  "context_is_target": {
+   "channel_82": true,
+   "channel_84": true,
+   "channel_70": true,
+   "channel_94": false,
+   "channel_62": false,
+   "channel_23": true,
+   "channel_11": true,
+   "channel_81": true
+  }
+ }
+}

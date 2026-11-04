@@ -1,0 +1,12 @@
+# data and outputs: never in git (regenerate from sim/fleet_v2b.json; see HANDOFF.md)
+data/
+fed/out_*/
+fed/round*.out
+sim/_VizFiles/*.bin
+*.pkl
+*.npy
+*.npz
+*.pt
+*.csv.gz
+__pycache__/
+.DS_Store
