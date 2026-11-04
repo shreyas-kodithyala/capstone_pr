@@ -331,3 +331,107 @@ cd .. && caffeinate -i zsh fed/run_round.sh > fed/round.out 2>&1      # validate
 - Physics on a different CPU architecture (x86 vs Apple ARM) may differ at floating-point level, so
   dataset v2b is near-identical, not bit-identical. Fine for development; the final frozen run is
   regenerated anyway.
+
+## 9. Conversation context: decisions, reasoning and the user's preferences
+
+A new chat has none of the earlier conversation, so this section holds it.
+
+### 9.1 How the user works
+
+- **Rounds:** go stage by stage. After each round, report a compact table per satellite:
+  - solo vs fed vs pers;
+  - F0.5 (all events and anomalies only), precision, recall;
+  - recall on fault families seen vs unseen locally;
+  - RUL lead time and error.
+  Then **ask** whether it is good enough. If the results are clearly bad, diagnose and fix first, then
+  report.
+- **Long jobs:** tell the user before starting installs, long runs or anything beyond the agreed stage.
+- **Style:** short, plain, honest answers; tables welcome; no hype. Be token-efficient: the weekly limit
+  is tight, so avoid reading large files whole and keep tool calls few.
+- **Machine:** keep it responsive (nice, few threads, memory watch). On macOS use `caffeinate -i`: a
+  sleep once stalled a run for ~5 h.
+- **Ease off if needed.** If results are hard to get, make the dataset slightly easier rather than adding
+  complexity. Keep the ESA-ADB format, labels and event types, mostly-local anomalies, ESA metrics,
+  baselines and the validation framework.
+- **Logical consistency matters.** The user doesn't want to explain every step; check the logic yourself
+  (no leakage, no test tuning, a causal story that holds).
+- **No cloud money.** Free compute is: the old Mac (16 GB), an **M5 Max (64 GB)**, the **RTX 4500 Ada PC**
+  (Ubuntu, 32 threads, 128 GB, 24 GB GPU) and Kaggle (one account).
+  - Estimated full round: old Mac ~5.5 h; M5 Max ~1.5–2 h; RTX ~45–75 min.
+  - Estimated worst case of 5 rounds: ~6–8 h on the new machines.
+
+### 9.2 Targets agreed with the user
+
+- **Detection:** a decent solo per-satellite F0.5 (for example ~0.5–0.6) that improves with FL (for
+  example to ~0.6–0.7). **Even a marginal gain is fine.** The result should be realistic and promising,
+  not rigged.
+- **RUL** must work. The "decent → better" story for RUL:
+  - **alone,** a satellite can only raise an alert (z > 6), because it has never seen a wheel fail;
+  - **with fleet knowledge** (the failure threshold from the 3 archived run-to-failure wheels of the same
+    design), it predicts the failure date. Report both.
+- **The story the user wants for FL:** a satellite trains on one fault family. In test it meets two and
+  misses the one it never saw. After FL it detects both, so its score improves. **Logic used to make this
+  real:**
+  - GDN2 is unsupervised (it forecasts normal behaviour; labelled rows are masked from the loss). So
+    "having seen a fault" matters through the **detector settings** chosen on the satellite's validation
+    window, and through how well the model forecasts normal behaviour.
+  - FL therefore contributes in two ways:
+    1. **Shared weights** trained on 4 satellites' normal data (a lower error floor).
+    2. **Federated detector selection:** each satellite scores the candidate settings on its own
+       validation events and shares only one F0.5 per setting. The fleet picks the setting with the best
+       mean, and each satellite applies it to its own robust-z error scale. This is federated
+       hyperparameter tuning: no telemetry or labels leave the satellite.
+  - The dataset ensures every satellite misses at least one family in training, and every family is seen
+    in training somewhere (§2 table).
+- **Round 1 caveat:** solo already caught 60–80 % of unseen families, because large deviations are
+  caught anyway. If round 2 shows the same, the honest options are:
+  - make some faults subtler (realistic: operators miss exactly those);
+  - use a shorter local training window (§7.3);
+  - or report the FL gain as precision (fewer false alarms).
+  Do not tweak the test data until it "works": decide on validation or a development fleet, then run the
+  final frozen fleet once.
+
+### 9.3 Decisions and why
+
+- **No fault-type classifier for now** (the user chose this; it would add complexity).
+  - The fault family is attributed from the alarmed channels (`fed/fedsim.py` `fam_of`).
+  - Labels are complete, so a classifier can be added later without regenerating.
+- **Health states vs health score:**
+  - The **states** (healthy / degrading / failed, plus phases and RUL) are ground truth in
+    `truth/health.csv`.
+  - The **score** is the model's output from telemetry. Comparing the two proves the score works.
+  - The user said to keep it simple: the RUL health indicator is the wheel excess-current fraction (§4).
+  - A fleet-wide ground "health score" formula was proposed but **not built**:
+    H = 1 − maxₛ(wₛ·Rₛ), where Rₛ = recency-decayed (τ ≈ 7 d) severity × duration of alarms + a
+    degradation trend.
+- **Event rate:**
+  - ESA's raw rate (3.7–5.4 anomalies per year) would give too few events in a 1-year satellite, so we use
+    roughly 10–27 anomalies per satellite-year ("ESA compressed").
+  - We match ESA in anomalous-time share (~1–2 %, except SAT_2 test because of the long degradation),
+    random arrivals, varied durations and mostly local anomalies.
+  - Reference: `sim/esa_ref_labels.json`.
+- **The user's per-anomaly "optimal detector stack" idea:**
+  - Legitimate only on training and validation data, never on test.
+  - Combining per-event optimal settings with OR would add up false alarms. The correct form is to use
+    per-event diagnosis to narrow the search, then pick **one** setting that maximises F0.5 over all
+    validation events (as `search()` does).
+- **FL personalisation:** shared layers are averaged; channel and command embeddings, normalisation and
+  detector thresholds stay local; `pers` = a short local fine-tune after FL. This follows the CLAUDE.md
+  rule never to average whole models.
+- **Communication gaps** are excluded from the event types (the user's request). All telecommands are
+  priority 3. No operator recovery modelling. FDIR attributes are in `events_truth.csv` (component,
+  subsystem, severity tier 1–3).
+- **Compute:** the old Mac (MPS) trains at ~110–140 s per epoch of 150 batches. One GPU job at a time;
+  4 parallel processes per GPU are possible on bigger machines (needs a small change to `fedsim.py`).
+
+### 9.4 Open items (not done)
+
+1. Round 2 results, then report to the user and ask.
+2. If needed: levers in §7, then the **final frozen fleet** (fresh seeds, scored once).
+3. Update `sim/report.py` (README / DATASHEET / VALIDATION for v2) and `sim/viz_clips.py` (Vizard clips:
+   normal operations with profiled slews, SAT_2 wheel failure, the fleet). The v1 clips used SAT_5.
+4. Write-up of the FL and RUL results, kept separate from the ESA-ADB results (CLAUDE.md rule).
+5. Later stages from CLAUDE.md §8: federated operator feedback, closed-loop FDIR, int8 on Cortex-A53, a
+   dashboard view.
+6. **The v1 dataset** (5 satellites, 34 channels; too easy for limit checks) exists only on the old Mac
+   (`data/sim_fleet_v1/`). It is not needed.
