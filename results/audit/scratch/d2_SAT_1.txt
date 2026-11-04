@@ -1,0 +1,8 @@
+##### SAT_1 pers
+[val] FP 1 (0.7/30d) alarm-time 0.21%
+   by channel {'att_err': 1}
+   last cmd {'TX_OFF': 1} med since 126 min | <45min 0% | within 6h after event 100% | within 5min of eclipse edge 0% | dur med 26 max 26 min | peak z med 45
+[test] FP 13 (2.1/30d) alarm-time 0.41%
+   by channel {'rw2_speed': 7, 'att_err': 5, 'rw3_speed': 1}
+   last cmd {'PAYLOAD_OFF': 6, 'TX_OFF': 5, 'MTQ_DUMP': 2} med since 43 min | <45min 62% | within 6h after event 38% | within 5min of eclipse edge 62% | dur med 31 max 44 min | peak z med 52
+   FP per 30-day bin [8, 3, 0, 0, 1, 1]

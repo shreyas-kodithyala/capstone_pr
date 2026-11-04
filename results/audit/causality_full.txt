@@ -1,0 +1,107 @@
+[  0.0m] rf 1021 seg 2042 bs 6 es 335376 v0 394560 ntr 524160 rows 1051200
+[  0.0m] == 1 BATCH REPLAY: every batch of the final run
+[  0.0m]   SAT_1 round 1 batch 1 windows start day: [4.7, 31.2, 35.6, 59.2, 73.7, 98.4] each 2042 rows = 17.0 h
+[  0.0m]   SAT_1: last row touched by any training batch 335371 (day 116.45); validation starts 394560 (day 137.0); test starts 524160 (day 182.0)
+[  0.0m]   SAT_2: last row touched by any training batch 335360 (day 116.44); validation starts 394560 (day 137.0); test starts 524160 (day 182.0)
+[  0.0m]   SAT_3: last row touched by any training batch 335360 (day 116.44); validation starts 394560 (day 137.0); test starts 524160 (day 182.0)
+[  0.0m]   SAT_4: last row touched by any training batch 335360 (day 116.44); validation starts 394560 (day 137.0); test starts 524160 (day 182.0)
+[  0.0m]   batches replayed: 14500 | best-round check rows inside [es, v0) | mu/sd equal rows before v0: PASS
+[  0.0m] == 2 RESAMPLING: each grid value vs raw telemetry; count and time-since from truncated raw
+[  0.3m]   SAT_1: 21,023,980 values checked, mismatches 1697; count/time-since differences with raw cut at day 250: 0
+[  0.6m]   SAT_2: 21,023,978 values checked, mismatches 1731; count/time-since differences with raw cut at day 250: 0
+[  0.8m]   SAT_3: 21,023,980 values checked, mismatches 0; count/time-since differences with raw cut at day 250: 0
+[  1.1m]   SAT_4: 21,023,980 values checked, mismatches 0; count/time-since differences with raw cut at day 250: 0
+[  1.1m] == 3 MODEL
+[  1.2m]   solo SAT_1: gradient into target row or later 0.0e+00 (into last past row 7.7e-01); error change before cut when future altered/deleted 8.7e-06; change at/after cut 188.1; median gap to stored errors 1.1e-04
+[  1.2m]   solo SAT_2: gradient into target row or later 0.0e+00 (into last past row 1.2e+00); error change before cut when future altered/deleted 6.7e-06; change at/after cut 220.4; median gap to stored errors 1.4e-04
+[  1.2m]   solo SAT_3: gradient into target row or later 0.0e+00 (into last past row 8.0e-01); error change before cut when future altered/deleted 5.2e-06; change at/after cut 167.9; median gap to stored errors 1.1e-04
+[  1.3m]   solo SAT_4: gradient into target row or later 0.0e+00 (into last past row 1.4e+00); error change before cut when future altered/deleted 7.0e-06; change at/after cut 154.2; median gap to stored errors 1.1e-04
+[  1.3m]   fed  SAT_1: gradient into target row or later 0.0e+00 (into last past row 7.8e-01); error change before cut when future altered/deleted 4.0e-06; change at/after cut 200.2; median gap to stored errors 1.4e-04
+[  1.4m]   fed  SAT_2: gradient into target row or later 0.0e+00 (into last past row 8.2e-01); error change before cut when future altered/deleted 7.4e-06; change at/after cut 209.5; median gap to stored errors 1.4e-04
+[  1.4m]   fed  SAT_3: gradient into target row or later 0.0e+00 (into last past row 1.1e+00); error change before cut when future altered/deleted 6.9e-06; change at/after cut 179.5; median gap to stored errors 1.2e-04
+[  1.5m]   fed  SAT_4: gradient into target row or later 0.0e+00 (into last past row 9.7e-01); error change before cut when future altered/deleted 8.6e-06; change at/after cut 229.3; median gap to stored errors 1.2e-04
+[  1.5m]   pers SAT_1: gradient into target row or later 0.0e+00 (into last past row 7.9e-01); error change before cut when future altered/deleted 6.3e-06; change at/after cut 246.3; median gap to stored errors 1.1e-04
+[  1.6m]   pers SAT_2: gradient into target row or later 0.0e+00 (into last past row 1.3e+00); error change before cut when future altered/deleted 3.9e-06; change at/after cut 193.4; median gap to stored errors 1.2e-04
+[  1.6m]   pers SAT_3: gradient into target row or later 0.0e+00 (into last past row 8.5e-01); error change before cut when future altered/deleted 8.8e-06; change at/after cut 193.7; median gap to stored errors 1.0e-04
+[  1.7m]   pers SAT_4: gradient into target row or later 0.0e+00 (into last past row 1.0e+00); error change before cut when future altered/deleted 9.8e-06; change at/after cut 230.4; median gap to stored errors 1.0e-04
+[  1.7m] == 4 DETECTOR: cuts placed inside alarms, all arms and both selections
+[  1.7m] == 6 STRICT RESCORING is printed per arm below (diagnostic only)
+/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/lib/nanfunctions.py:1117: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/lib/nanfunctions.py:1117: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/lib/nanfunctions.py:1117: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+[  2.2m]   solo SAT_1 local     reported [0.781, 0.0, 0.0, 0.0, nan] zero-look-ahead [0.781, 0.0, 0.0, 0.0, nan] delayed-70 [0.156, 0.0, 0.0, 4.0, nan]
+[  2.2m]   solo SAT_1 federated reported [0.909, 0.833, 3.0, 0.0, 0.5] zero-look-ahead [0.908, 0.833, 3.0, 0.0, 16.5] delayed-70 [0.454, 0.441, 3.0, 4.0, 35.5]
+[  2.3m]   solo SAT_1 local     cut 453140: rows differing before limit 0; farthest look-ahead 1 rows
+[  2.3m]   solo SAT_1 federated cut 453140: rows differing before limit 0; farthest look-ahead 3 rows
+[  2.4m]   solo SAT_1 local     cut 313360: rows differing before limit 0; farthest look-ahead 3 rows
+[  2.4m]   solo SAT_1 federated cut 313360: rows differing before limit 0; farthest look-ahead 3 rows
+[  2.5m]   solo SAT_1 local     cut 453216: rows differing before limit 0; farthest look-ahead 0 rows
+[  2.5m]   solo SAT_1 federated cut 453216: rows differing before limit 0; farthest look-ahead 0 rows
+[  3.9m]   solo SAT_2 local     reported [0.67, 0.636, 26.0, 15.0, 0.0] zero-look-ahead [0.662, 0.626, 25.0, 15.0, 6.0] delayed-70 [0.538, 0.513, 22.0, 20.0, 35.0]
+[  5.4m]   solo SAT_2 federated reported [0.67, 0.636, 26.0, 15.0, 0.0] zero-look-ahead [0.662, 0.626, 25.0, 15.0, 6.0] delayed-70 [0.538, 0.513, 22.0, 20.0, 35.0]
+[  5.5m]   solo SAT_2 local     cut 509150: rows differing before limit 0; farthest look-ahead 0 rows
+[  5.5m]   solo SAT_2 federated cut 509150: rows differing before limit 0; farthest look-ahead 0 rows
+[  5.6m]   solo SAT_2 local     cut 451808: rows differing before limit 0; farthest look-ahead 0 rows
+[  5.6m]   solo SAT_2 federated cut 451808: rows differing before limit 0; farthest look-ahead 0 rows
+[  5.7m]   solo SAT_2 local     cut 509237: rows differing before limit 0; farthest look-ahead 0 rows
+[  5.7m]   solo SAT_2 federated cut 509237: rows differing before limit 0; farthest look-ahead 0 rows
+[  5.8m]   solo SAT_3 local     reported [0.776, 0.736, 15.0, 6.0, 0.0] zero-look-ahead [0.654, 0.568, 9.0, 7.0, 9.5] delayed-70 [0.49, 0.481, 11.0, 13.0, 35.0]
+[  5.8m]   solo SAT_3 federated reported [0.774, 0.686, 7.0, 2.0, 1.5] zero-look-ahead [0.762, 0.641, 5.0, 1.0, 34.0] delayed-70 [0.352, 0.373, 5.0, 8.0, 37.5]
+[  5.9m]   solo SAT_3 local     cut 144222: rows differing before limit 0; farthest look-ahead 3 rows
+[  5.9m]   solo SAT_3 federated cut 144222: rows differing before limit 0; farthest look-ahead 3 rows
+[  6.1m]   solo SAT_3 local     cut 481060: rows differing before limit 0; farthest look-ahead 0 rows
+[  6.1m]   solo SAT_3 federated cut 481060: rows differing before limit 0; farthest look-ahead 3 rows
+[  6.2m]   solo SAT_3 local     cut 144265: rows differing before limit 0; farthest look-ahead 0 rows
+[  6.2m]   solo SAT_3 federated cut 144265: rows differing before limit 0; farthest look-ahead 0 rows
+[  6.2m]   solo SAT_4 local     reported [0.788, 0.2, 1.0, 4.0, 6.0] zero-look-ahead [0.822, 0.238, 1.0, 3.0, 24.5] delayed-70 [0.157, 0.068, 1.0, 16.0, 41.0]
+[  6.2m]   solo SAT_4 federated reported [0.788, 0.2, 1.0, 4.0, 6.0] zero-look-ahead [0.822, 0.238, 1.0, 3.0, 24.5] delayed-70 [0.157, 0.068, 1.0, 16.0, 41.0]
+[  6.3m]   solo SAT_4 local     cut 220524: rows differing before limit 0; farthest look-ahead 3 rows
+[  6.3m]   solo SAT_4 federated cut 220524: rows differing before limit 0; farthest look-ahead 3 rows
+[  6.5m]   solo SAT_4 local     cut 483924: rows differing before limit 0; farthest look-ahead 3 rows
+[  6.5m]   solo SAT_4 federated cut 483924: rows differing before limit 0; farthest look-ahead 3 rows
+[  6.6m]   solo SAT_4 local     cut 220581: rows differing before limit 0; farthest look-ahead 0 rows
+[  6.6m]   solo SAT_4 federated cut 220581: rows differing before limit 0; farthest look-ahead 0 rows
+[  7.1m]   fed  SAT_1 local     reported [0.833, 0.5, 1.0, 0.0, 18.0] zero-look-ahead [0.833, 0.5, 1.0, 0.0, 57.5] delayed-70 [0.278, 0.192, 1.0, 4.0, 53.0]
+[  7.1m]   fed  SAT_1 federated reported [0.795, 0.555, 2.0, 1.0, 4.0] zero-look-ahead [0.795, 0.555, 2.0, 1.0, 8.5] delayed-70 [0.341, 0.294, 2.0, 5.0, 39.0]
+[  7.2m]   fed  SAT_1 local     cut 453140: rows differing before limit 0; farthest look-ahead 3 rows
+[  7.2m]   fed  SAT_1 federated cut 453140: rows differing before limit 0; farthest look-ahead 3 rows
+[  7.4m]   fed  SAT_1 local     cut 313908: rows differing before limit 0; farthest look-ahead 0 rows
+[  7.4m]   fed  SAT_1 federated cut 313908: rows differing before limit 0; farthest look-ahead 3 rows
+[  7.5m]   fed  SAT_1 local     cut 453186: rows differing before limit 0; farthest look-ahead 0 rows
+[  7.5m]   fed  SAT_1 federated cut 453186: rows differing before limit 0; farthest look-ahead 9 rows
+[  8.9m]   fed  SAT_2 local     reported [0.878, 0.87, 31.0, 4.0, 1.0] zero-look-ahead [0.819, 0.803, 30.0, 7.0, 5.5] delayed-70 [0.61, 0.589, 23.0, 15.0, 35.5]
+[ 10.2m]   fed  SAT_2 federated reported [0.878, 0.87, 31.0, 4.0, 1.0] zero-look-ahead [0.819, 0.803, 30.0, 7.0, 5.5] delayed-70 [0.61, 0.589, 23.0, 15.0, 35.5]
+[ 10.3m]   fed  SAT_2 local     cut 506567: rows differing before limit 0; farthest look-ahead 0 rows
+[ 10.3m]   fed  SAT_2 federated cut 506567: rows differing before limit 0; farthest look-ahead 0 rows
+[ 10.5m]   fed  SAT_2 local     cut 443630: rows differing before limit 0; farthest look-ahead 3 rows
+[ 10.5m]   fed  SAT_2 federated cut 443630: rows differing before limit 0; farthest look-ahead 3 rows
+[ 10.6m]   fed  SAT_2 local     cut 506629: rows differing before limit 0; farthest look-ahead 0 rows
+[ 10.6m]   fed  SAT_2 federated cut 506629: rows differing before limit 0; farthest look-ahead 0 rows
+[ 10.6m]   fed  SAT_3 local     reported [0.736, 0.688, 14.0, 7.0, 1.25] zero-look-ahead [0.799, 0.726, 8.0, 2.0, 18.0] delayed-70 [0.49, 0.454, 10.0, 13.0, 36.75]
+[ 10.7m]   fed  SAT_3 federated reported [0.915, 0.882, 9.0, 0.0, 17.5] zero-look-ahead [0.844, 0.784, 8.0, 1.0, 24.75] delayed-70 [0.422, 0.447, 6.0, 7.0, 51.0]
+[ 10.8m]   fed  SAT_3 local     cut 144226: rows differing before limit 0; farthest look-ahead 7 rows
+[ 10.8m]   fed  SAT_3 federated cut 144226: rows differing before limit 0; farthest look-ahead 3 rows
+[ 10.9m]   fed  SAT_3 local     cut 478998: rows differing before limit 0; farthest look-ahead 8 rows
+[ 10.9m]   fed  SAT_3 federated cut 478998: rows differing before limit 0; farthest look-ahead 3 rows
+[ 11.0m]   fed  SAT_3 local     cut 144262: rows differing before limit 0; farthest look-ahead 0 rows
+[ 11.0m]   fed  SAT_3 federated cut 144262: rows differing before limit 0; farthest look-ahead 0 rows
+[ 11.1m]   fed  SAT_4 local     reported [0.307, 0.073, 3.0, 47.0, 0.0] zero-look-ahead [0.504, 0.153, 3.0, 20.0, 12.5] delayed-70 [0.09, 0.059, 3.0, 59.0, 35.0]
+[ 11.1m]   fed  SAT_4 federated reported [0.418, 0.082, 2.0, 27.0, 40.5] zero-look-ahead [0.542, 0.129, 2.0, 16.0, 45.0] delayed-70 [0.104, 0.059, 2.0, 39.0, 75.5]
+[ 11.2m]   fed  SAT_4 local     cut 340194: rows differing before limit 0; farthest look-ahead 3 rows
+[ 11.2m]   fed  SAT_4 federated cut 340194: rows differing before limit 0; farthest look-ahead 3 rows
+[ 11.3m]   fed  SAT_4 local     cut 292514: rows differing before limit 0; farthest look-ahead 3 rows
+[ 11.3m]   fed  SAT_4 federated cut 292514: rows differing before limit 0; farthest look-ahead 3 rows
+[ 11.4m]   fed  SAT_4 local     cut 340233: rows differing before limit 0; farthest look-ahead 0 rows
+[ 11.4m]   fed  SAT_4 federated cut 340233: rows differing before limit 0; farthest look-ahead 0 rows
+[ 12.0m]   pers SAT_1 local     reported [0.833, 0.682, 3.0, 1.0, 21.5] zero-look-ahead [0.833, 0.681, 3.0, 1.0, 26.0] delayed-70 [0.416, 0.394, 3.0, 5.0, 56.5]
+[ 12.0m]   pers SAT_1 federated reported [0.892, 0.832, 5.0, 1.0, 1.0] zero-look-ahead [0.908, 0.833, 3.0, 0.0, 14.5] delayed-70 [0.357, 0.325, 3.0, 7.0, 35.0]
+[ 12.1m]   pers SAT_1 local     cut 453140: rows differing before limit 0; farthest look-ahead 3 rows
+[ 12.1m]   pers SAT_1 federated cut 453140: rows differing before limit 0; farthest look-ahead 3 rows
+[ 12.2m]   pers SAT_1 local     cut 313360: rows differing before limit 0; farthest look-ahead 3 rows
+[ 12.2m]   pers SAT_1 federated cut 313360: rows differing before limit 0; farthest look-ahead 3 rows
+[ 12.3m]   pers SAT_1 local     cut 453219: rows differing before limit 0; farthest look-ahead 0 rows
+[ 12.3m]   pers SAT_1 federated cut 453219: rows differing before limit 0; farthest look-ahead 0 rows
+[ 13.8m]   pers SAT_2 local     reported [0.397, 0.365, 31.0, 58.0, 0.0] zero-look-ahead [0.45, 0.415, 30.0, 48.0, 5.25] delayed-70 [0.278, 0.256, 23.0, 68.0, 35.0]

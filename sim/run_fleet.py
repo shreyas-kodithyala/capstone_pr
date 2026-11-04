@@ -38,7 +38,7 @@ def _init():
         pass
 
 
-def phys_job(name, spec, seed, twin=False, replay=None):
+def phys_job(name, spec, seed, twin=False, replay=None, follow=False):
     _init()
     import config as C  # noqa
     from operations import Timeline
@@ -52,7 +52,8 @@ def phys_job(name, spec, seed, twin=False, replay=None):
 
     def log(s):
         logf.write(time.strftime("%H:%M:%S ") + s + "\n"); logf.flush()
-    meta = SatSim(tl).run(d, twin=twin, replay=replay, log=log)
+    meta = SatSim(tl).run(d, twin=twin, replay=replay, log=log,
+                          follow=os.path.join(WORK, name, "phys") if follow else None)
     log(f"done in {meta['wall_min']:.1f} min, auto dumps {len(meta['auto_dumps'])}")
     return meta
 
@@ -91,8 +92,9 @@ def code_hash():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
-    ap.add_argument("--workers", type=int, default=7)
-    ap.add_argument("--prod-workers", type=int, default=2)
+    ap.add_argument("--workers", type=int, default=14)
+    ap.add_argument("--prod-workers", type=int, default=4)
+    ap.add_argument("--no-follow", action="store_true", help="run each twin after its faulty run, not behind it")
     a = ap.parse_args()
     import config as C
     os.makedirs(os.path.join(OUT, "logs"), exist_ok=True)
@@ -124,6 +126,10 @@ def main():
     pending = {}
     for n in sorted(names, key=lambda n: -sats[n].get("days", C.DAYS)):
         pending[pp.submit(phys_job, n, sats[n], fleet["seeds"][n])] = ("phys", n)
+    if not a.no_follow:          # queued after every faulty run, so a twin never blocks its own faulty run
+        for n in sorted(names, key=lambda n: -sats[n].get("days", C.DAYS)):
+            if n in twins:
+                pending[pp.submit(phys_job, n, sats[n], fleet["seeds"][n], True, None, True)] = ("twin", n)
     done_phys, done_twin, prods = set(), set(), {}
     while pending:
         fin, _ = wait(list(pending), return_when=FIRST_COMPLETED, timeout=60)
@@ -137,12 +143,12 @@ def main():
             say(f"{kind} {n} finished")
             if kind == "phys":
                 done_phys.add(n)
-                if n in twins:
+                if n in twins and a.no_follow:
                     pending[pp.submit(phys_job, n, sats[n], fleet["seeds"][n], True, res["auto_dumps"])] = ("twin", n)
             elif kind == "twin":
                 done_twin.add(n)
             if kind in ("phys", "twin") and n in done_phys and (n not in twins or n in done_twin):
-                while free_gb() < 2.5:
+                while free_gb() < 8.0:
                     say(f"memory guard: {free_gb():.1f} GB free, waiting"); time.sleep(30)
                 root = OUT if n in C.FLEET else os.path.join(OUT, "archive")
                 pending[qp.submit(prod_job, n, sats[n], fleet["seeds"][n], n in twins, root)] = ("products", n)

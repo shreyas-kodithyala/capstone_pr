@@ -1,0 +1,56 @@
+ID,Class,Subclass,Category,Dimensionality,Locality,Length
+id_1,rw_friction_spike,rw3,Anomaly,Multivariate,Local,Subsequence
+id_3,rw_drive_dropout,rw2,Anomaly,Multivariate,Local,Subsequence
+id_4,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_5,rw_drive_dropout,rw3,Anomaly,Multivariate,Local,Point
+id_6,rw_friction_spike,rw1,Anomaly,Multivariate,Local,Subsequence
+id_7,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_8,rw_friction_spike,rw1,Anomaly,Multivariate,Local,Subsequence
+id_9,rw_drive_dropout,rw4,Anomaly,Multivariate,Local,Subsequence
+id_11,rw_drive_dropout,rw1,Anomaly,Multivariate,Local,Subsequence
+id_13,rw_friction_spike,rw4,Anomaly,Multivariate,Local,Subsequence
+id_14,rw_friction_spike,rw4,Anomaly,Multivariate,Local,Subsequence
+id_15,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_16,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_17,safe_mode_drill,aocs,Rare Event,Multivariate,Global,Subsequence
+id_18,autonomous_momentum_dump,aocs,Rare Event,Multivariate,Local,Subsequence
+id_19,rw_drive_dropout,rw2,Anomaly,Multivariate,Local,Subsequence
+id_21,str_outage,star_tracker,Anomaly,Univariate,Local,Subsequence
+id_23,rw_friction_spike,rw4,Anomaly,Multivariate,Local,Subsequence
+id_24,gyro_bias_instability,gyro_x,Anomaly,Univariate,Local,Subsequence
+id_25,gyro_spikes,gyro_z,Anomaly,Univariate,Global,Subsequence
+id_26,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_27,star_tracker_reset,star_tracker,Rare Event,Univariate,Local,Subsequence
+id_28,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_29,rw_drive_dropout,rw2,Anomaly,Multivariate,Local,Subsequence
+id_30,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_31,rw_drive_dropout,rw2,Anomaly,Multivariate,Global,Subsequence
+id_32,str_outage,star_tracker,Anomaly,Univariate,Local,Subsequence
+id_33,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_34,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_35,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_36,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_37,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_38,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_39,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_40,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_41,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_42,gyro_spikes,gyro_y,Anomaly,Univariate,Global,Subsequence
+id_43,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_44,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_45,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_46,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_47,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_48,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_49,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_50,rw_friction_spike,rw1,Anomaly,Multivariate,Local,Subsequence
+id_51,gyro_bias_instability,gyro_z,Anomaly,Univariate,Local,Subsequence
+id_52,gyro_bias_instability,gyro_z,Anomaly,Univariate,Local,Subsequence
+id_53,rw_wear_spike,rw2,Anomaly,Multivariate,Local,Subsequence
+id_54,rw_degradation,rw2,Anomaly,Multivariate,Global,Subsequence
+id_55,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_56,rw_friction_spike,rw4,Anomaly,Multivariate,Local,Subsequence
+id_57,str_outage,star_tracker,Anomaly,Univariate,Local,Subsequence
+id_58,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_59,autonomous_momentum_dump,aocs,Rare Event,Multivariate,Local,Subsequence
+id_60,rw_failure,rw2,Anomaly,Multivariate,Global,Subsequence

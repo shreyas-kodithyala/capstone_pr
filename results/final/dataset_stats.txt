@@ -1,0 +1,11 @@
+ESA M1: 0.77 % anomalous, 0.78 % rare, 3.7 anomalies/yr, 4.6 rare/yr
+ESA M2: 1.57 % anomalous, 3.25 % rare, 5.4 anomalies/yr, 172.6 rare/yr
+sat split | anomalies rare | families | % rows anomaly (without run-to-failure) | % rows rare | type mix
+SAT_1 train | 4 4 | {'F2': 4} | 0.21 (0.21) | 0.05 | {'UL': 3, 'UG': 1}
+SAT_1 test  | 6 6 | {'F3': 3, 'F1': 2, 'F2': 1} | 0.73 (0.73) | 0.13 | {'ML': 3, 'MG': 1, 'UL': 1, 'UG': 1}
+SAT_2 train | 10 6 | {'F1': 10} | 0.18 (0.18) | 0.14 | {'ML': 10}
+SAT_2 test  | 33 6 | {'F1': 25, 'F2': 8} | 38.89 (1.19) | 0.05 | {'ML': 22, 'UL': 6, 'MG': 3, 'UG': 2}
+SAT_3 train | 10 5 | {'F3': 10} | 1.80 (1.80) | 0.13 | {'MG': 6, 'ML': 4}
+SAT_3 test  | 15 4 | {'F3': 6, 'F2': 5, 'F1': 4} | 1.77 (1.77) | 0.05 | {'ML': 7, 'UL': 6, 'MG': 2}
+SAT_4 train | 5 14 | {'F1': 3, 'F2': 2} | 0.07 (0.07) | 0.31 | {'ML': 3, 'UL': 1, 'UG': 1}
+SAT_4 test  | 5 14 | {'F3': 5} | 0.69 (0.69) | 0.31 | {'MG': 2, 'ML': 2, 'UL': 1}

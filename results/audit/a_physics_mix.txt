@@ -1,0 +1,16 @@
+SAT_1 {'frac_eclipses_voltage_falls': 0.9981, 'voltage_swing_per_eclipse_median_V': 1.47, 'voltage_min': 31.63, 'voltage_max': 33.7, 'limit_v': [24.0, 33.7]}
+    {"n_eclipses": 5708, "mean_measured_min": 33.19498948843728, "mean_analytic_min": 34.69434673148388, "mean_abs_diff_min": 1.5415358967929527, "eclipse_fraction": 0.360890
+    {"max_abs_rpm": 2331.0, "limit_rpm": 6000.0, "max_abs_current_A": 2.011, "limit_current_A": 2.0}
+SAT_2 {'frac_eclipses_voltage_falls': 0.9981, 'voltage_swing_per_eclipse_median_V': 1.45, 'voltage_min': 31.71, 'voltage_max': 33.7, 'limit_v': [24.0, 33.7]}
+    {"n_eclipses": 5110, "mean_measured_min": 29.869275929549904, "mean_analytic_min": 31.08653448446494, "mean_abs_diff_min": 1.2583648134063712, "eclipse_fraction": 0.29093
+    {"max_abs_rpm": 2792.3, "limit_rpm": 6000.0, "max_abs_current_A": 2.013, "limit_current_A": 2.0}
+SAT_3 {'frac_eclipses_voltage_falls': 0.9977, 'voltage_swing_per_eclipse_median_V': 1.51, 'voltage_min': 30.82, 'voltage_max': 33.69, 'limit_v': [24.0, 33.7]}
+    {"n_eclipses": 5341, "mean_measured_min": 30.592866504399925, "mean_analytic_min": 31.890253515753646, "mean_abs_diff_min": 1.3441119164658393, "eclipse_fraction": 0.3114
+    {"max_abs_rpm": 3754.5, "limit_rpm": 6000.0, "max_abs_current_A": 2.009, "limit_current_A": 2.0}
+SAT_4 {'frac_eclipses_voltage_falls': 0.997, 'voltage_swing_per_eclipse_median_V': 1.49, 'voltage_min': 31.72, 'voltage_max': 33.73, 'limit_v': [24.0, 33.7]}
+    {"n_eclipses": 5685, "mean_measured_min": 33.176868953386105, "mean_analytic_min": 34.544743379344865, "mean_abs_diff_min": 1.4193096840760535, "eclipse_fraction": 0.3593
+    {"max_abs_rpm": 2638.4, "limit_rpm": 6000.0, "max_abs_current_A": 2.017, "limit_current_A": 2.0}
+ESA mix M1 {'Multivariate-Global': 0.941, 'Multivariate-Local': 0.039, 'Univariate-Local': 0.02} point 0.216
+ESA mix M2 {'Multivariate-Global': 0.474, 'Multivariate-Local': 0.474, 'Univariate-Local': 0.053} point 0.0
+OUR mix {'Multivariate-Local': 0.58, 'Univariate-Local': 0.205, 'Multivariate-Global': 0.159, 'Univariate-Global': 0.057} point frac 0.023 n 88
+duration h quantiles {0.1: 0.05, 0.5: 2.22, 0.9: 11.98} codes W excluded median

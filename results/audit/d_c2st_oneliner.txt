@@ -1,0 +1,11 @@
+C2ST AUC simulated vs real ESA (0.5 = indistinguishable, 1 = trivially separable): 1.000
+C2ST AUC real M1 vs real M2 (same-domain reference): 1.000
+  C2ST wheel          n=247 AUC 0.999
+  C2ST attitude       n=128 AUC 0.997
+  C2ST mag            n= 90 AUC 1.000
+  C2ST power/thermal  n=135 AUC 0.994
+per-feature KS: median 0.31, max 0.54, features with KS<0.2: 3 of 22
+
+One-liner test on test anomalies (x, -x, diff, -diff, 1-hour mean)
+{'A1': '6/6', 'A2': '1/5', 'B1': '5/6', 'B2': '2/3', 'B4': '1/5', 'C1': '2/5', 'C3': '5/5', 'D1': '4/4', 'W1': '15/18', 'W2': '1/1', 'W3': '1/1'}
+trivial events: 43/59 = 73 %

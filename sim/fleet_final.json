@@ -1,0 +1,102 @@
+{
+ "created": "2026-11-04 14:54:25",
+ "code_sha256": "95c990304dde532ee207a6dd65840519786abb81e4f5c8c5dd1b01631dd9738f",
+ "seeds": {
+  "SAT_1": 59047741,
+  "SAT_2": 5697712,
+  "SAT_3": 77159619,
+  "SAT_4": 66597672,
+  "ARC_1": 14348500,
+  "ARC_2": 58309197,
+  "ARC_3": 35761577
+ },
+ "epoch": "2025-01-01T00:00:00",
+ "days": 365,
+ "split_day": 182,
+ "val_days": 45,
+ "grid_s": 30,
+ "satellites": {
+  "SAT_1": {
+   "profile": "healthy",
+   "role": "survey",
+   "orbit": {
+    "kind": "sso",
+    "ltan": 10.5,
+    "argl0": 0.0
+   }
+  },
+  "SAT_2": {
+   "profile": "wheel",
+   "role": "imaging",
+   "orbit": {
+    "kind": "incl",
+    "inc": 65.0,
+    "raan0": 160.0,
+    "argl0": 45.0
+   }
+  },
+  "SAT_3": {
+   "profile": "power",
+   "role": "survey",
+   "orbit": {
+    "kind": "incl",
+    "inc": 53.0,
+    "raan0": 40.0,
+    "argl0": 0.0
+   }
+  },
+  "SAT_4": {
+   "profile": "ops",
+   "role": "imaging",
+   "orbit": {
+    "kind": "sso",
+    "ltan": 13.5,
+    "argl0": 180.0
+   }
+  },
+  "ARC_1": {
+   "profile": "archive",
+   "role": "survey",
+   "days": 150,
+   "wear": {
+    "t_on": 10,
+    "fail": 120
+   },
+   "orbit": {
+    "kind": "sso",
+    "ltan": 10.5,
+    "argl0": 200.0
+   }
+  },
+  "ARC_2": {
+   "profile": "archive",
+   "role": "imaging",
+   "days": 150,
+   "wear": {
+    "t_on": 5,
+    "fail": 95
+   },
+   "orbit": {
+    "kind": "incl",
+    "inc": 53.0,
+    "raan0": 250.0,
+    "argl0": 10.0
+   }
+  },
+  "ARC_3": {
+   "profile": "archive",
+   "role": "survey",
+   "days": 150,
+   "wear": {
+    "t_on": 15,
+    "fail": 135
+   },
+   "orbit": {
+    "kind": "incl",
+    "inc": 65.0,
+    "raan0": 300.0,
+    "argl0": 120.0
+   }
+  }
+ }
+}

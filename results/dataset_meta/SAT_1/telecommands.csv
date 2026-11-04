@@ -1,0 +1,13 @@
+Telecommand,Name,Description,Priority
+telecommand_1,SLEW_TARGET,Slew to imaging target (offset from nadir),3
+telecommand_2,POINT_NADIR,Return to nadir pointing,3
+telecommand_3,PAYLOAD_ON,Payload power on,3
+telecommand_4,PAYLOAD_OFF,Payload power off,3
+telecommand_5,TX_ON,X-band transmitter on (ground pass),3
+telecommand_6,TX_OFF,X-band transmitter off,3
+telecommand_7,MTQ_DUMP,Start 30 min magnetic momentum dump,3
+telecommand_8,GYRO_CAL,Gyro calibration manoeuvre sequence,3
+telecommand_9,STR_RESET,Star tracker reset,3
+telecommand_10,SAFE_ENTER,Enter sun-safe mode (drill),3
+telecommand_11,SAFE_EXIT,Exit sun-safe mode,3
+telecommand_12,INERTIAL_CAL,Inertial-hold calibration (deep space),3

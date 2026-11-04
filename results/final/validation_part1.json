@@ -1,0 +1,306 @@
+{
+ "P1_momentum": {
+  "H0_Nms": 20.299259222937177,
+  "max_rel_drift": 2.2137716218920112e-10,
+  "note": "1 orbit, 30 deg slew, wheels with friction, controller active, no external torques"
+ },
+ "physics": {
+  "SAT_1": {
+   "orbit_rate_deg_s": {
+    "measured_median_gyro_z": 0.06017,
+    "analytic_n": 0.06272877691328348
+   },
+   "eclipse": {
+    "n_eclipses": 5708,
+    "mean_measured_min": 33.19498948843728,
+    "mean_analytic_min": 34.69434673148388,
+    "mean_abs_diff_min": 1.5415358967929527,
+    "eclipse_fraction": 0.3608904109589041
+   },
+   "actuator_limits": {
+    "max_abs_rpm": 2331.0,
+    "limit_rpm": 6000.0,
+    "max_abs_current_A": 2.011,
+    "limit_current_A": 2.0
+   },
+   "battery": {
+    "frac_eclipses_voltage_falls": 0.9980640619500176,
+    "voltage_swing_per_eclipse_median_V": 1.4699999999999989,
+    "voltage_min": 31.63,
+    "voltage_max": 33.7,
+    "limit_v": [
+     24.0,
+     33.7
+    ]
+   }
+  },
+  "SAT_2": {
+   "orbit_rate_deg_s": {
+    "measured_median_gyro_z": 0.06084,
+    "analytic_n": 0.06272877691328348
+   },
+   "eclipse": {
+    "n_eclipses": 5110,
+    "mean_measured_min": 29.869275929549904,
+    "mean_analytic_min": 31.08653448446494,
+    "mean_abs_diff_min": 1.2583648134063712,
+    "eclipse_fraction": 0.29093987823439876
+   },
+   "actuator_limits": {
+    "max_abs_rpm": 2792.3,
+    "limit_rpm": 6000.0,
+    "max_abs_current_A": 2.013,
+    "limit_current_A": 2.0
+   },
+   "battery": {
+    "frac_eclipses_voltage_falls": 0.9980852082336046,
+    "voltage_swing_per_eclipse_median_V": 1.4500000000000028,
+    "voltage_min": 31.71,
+    "voltage_max": 33.7,
+    "limit_v": [
+     24.0,
+     33.7
+    ]
+   }
+  },
+  "SAT_3": {
+   "orbit_rate_deg_s": {
+    "measured_median_gyro_z": 0.06124,
+    "analytic_n": 0.06272877691328348
+   },
+   "eclipse": {
+    "n_eclipses": 5341,
+    "mean_measured_min": 30.592866504399925,
+    "mean_analytic_min": 31.890253515753646,
+    "mean_abs_diff_min": 1.3441119164658393,
+    "eclipse_fraction": 0.3114925799086758
+   },
+   "actuator_limits": {
+    "max_abs_rpm": 3754.5,
+    "limit_rpm": 6000.0,
+    "max_abs_current_A": 2.009,
+    "limit_current_A": 2.0
+   },
+   "battery": {
+    "frac_eclipses_voltage_falls": 0.997726411519515,
+    "voltage_swing_per_eclipse_median_V": 1.509999999999998,
+    "voltage_min": 30.82,
+    "voltage_max": 33.69,
+    "limit_v": [
+     24.0,
+     33.7
+    ]
+   }
+  },
+  "SAT_4": {
+   "orbit_rate_deg_s": {
+    "measured_median_gyro_z": 0.06142,
+    "analytic_n": 0.06272877691328348
+   },
+   "eclipse": {
+    "n_eclipses": 5685,
+    "mean_measured_min": 33.176868953386105,
+    "mean_analytic_min": 34.544743379344865,
+    "mean_abs_diff_min": 1.4193096840760535,
+    "eclipse_fraction": 0.3593103120243531
+   },
+   "actuator_limits": {
+    "max_abs_rpm": 2638.4,
+    "limit_rpm": 6000.0,
+    "max_abs_current_A": 2.017,
+    "limit_current_A": 2.0
+   },
+   "battery": {
+    "frac_eclipses_voltage_falls": 0.9969868840836583,
+    "voltage_swing_per_eclipse_median_V": 1.490000000000002,
+    "voltage_min": 31.72,
+    "voltage_max": 33.73,
+    "limit_v": [
+     24.0,
+     33.7
+    ]
+   }
+  }
+ },
+ "stats": {
+  "SAT_1": {
+   "raw_samples": 32522180,
+   "grid_rows": 1051200,
+   "channels": 20,
+   "target_channels": 19,
+   "telecommands": 12,
+   "tc_executions": 11590,
+   "annotated_rows_pct": 0.5609779299847792,
+   "anomaly_rows_pct": 0.4701293759512937,
+   "events": 20,
+   "anomalies": 10,
+   "rare_events": 10,
+   "invisible_faults": 0,
+   "uni_multi": [
+    7,
+    13
+   ],
+   "global_local": [
+    12,
+    8
+   ],
+   "point_subseq": [
+    1,
+    19
+   ],
+   "classes": 12,
+   "train_test_events": [
+    8,
+    12
+   ],
+   "sampling_interval_rw1_speed": {
+    "median_s": 15.001,
+    "cv": 0.04756166469402581,
+    "max_gap_s": 45.198
+   }
+  },
+  "SAT_2": {
+   "raw_samples": 32522002,
+   "grid_rows": 1051200,
+   "channels": 20,
+   "target_channels": 19,
+   "telecommands": 12,
+   "tc_executions": 10124,
+   "annotated_rows_pct": 19.673896499238968,
+   "anomaly_rows_pct": 19.59208523592085,
+   "events": 55,
+   "anomalies": 43,
+   "rare_events": 12,
+   "invisible_faults": 0,
+   "uni_multi": [
+    9,
+    46
+   ],
+   "global_local": [
+    14,
+    41
+   ],
+   "point_subseq": [
+    1,
+    54
+   ],
+   "classes": 13,
+   "train_test_events": [
+    16,
+    39
+   ],
+   "sampling_interval_rw1_speed": {
+    "median_s": 15.001,
+    "cv": 0.047677274438520025,
+    "max_gap_s": 45.278
+   }
+  },
+  "SAT_3": {
+   "raw_samples": 32521550,
+   "grid_rows": 1051200,
+   "channels": 20,
+   "target_channels": 19,
+   "telecommands": 12,
+   "tc_executions": 4988,
+   "annotated_rows_pct": 1.8738584474885844,
+   "anomaly_rows_pct": 1.783390410958904,
+   "events": 34,
+   "anomalies": 25,
+   "rare_events": 9,
+   "invisible_faults": 0,
+   "uni_multi": [
+    6,
+    28
+   ],
+   "global_local": [
+    17,
+    17
+   ],
+   "point_subseq": [
+    0,
+    34
+   ],
+   "classes": 11,
+   "train_test_events": [
+    15,
+    19
+   ],
+   "sampling_interval_rw1_speed": {
+    "median_s": 15.001,
+    "cv": 0.04783533533807194,
+    "max_gap_s": 45.435
+   }
+  },
+  "SAT_4": {
+   "raw_samples": 32521976,
+   "grid_rows": 1051200,
+   "channels": 20,
+   "target_channels": 19,
+   "telecommands": 12,
+   "tc_executions": 19586,
+   "annotated_rows_pct": 0.6902587519025876,
+   "anomaly_rows_pct": 0.3786149162861492,
+   "events": 38,
+   "anomalies": 10,
+   "rare_events": 28,
+   "invisible_faults": 0,
+   "uni_multi": [
+    3,
+    35
+   ],
+   "global_local": [
+    31,
+    7
+   ],
+   "point_subseq": [
+    0,
+    38
+   ],
+   "classes": 10,
+   "train_test_events": [
+    19,
+    19
+   ],
+   "sampling_interval_rw1_speed": {
+    "median_s": 15.001,
+    "cv": 0.04678273422154887,
+    "max_gap_s": 45.085
+   }
+  }
+ },
+ "R2_catch22": {
+  "n_real": 253,
+  "n_sim": 300,
+  "median_feature_coverage": 0.99,
+  "per_feature_coverage": [
+   0.8433333333333334,
+   0.8933333333333333,
+   0.99,
+   1.0,
+   1.0,
+   1.0,
+   0.9466666666666667,
+   1.0,
+   0.96,
+   0.8866666666666667,
+   0.9966666666666667,
+   1.0,
+   0.9966666666666667,
+   0.8233333333333334,
+   0.9266666666666666,
+   0.91,
+   1.0,
+   0.99,
+   0.98,
+   0.9066666666666666,
+   1.0,
+   1.0
+  ],
+  "frac_sim_within_real_nn95": 0.7666666666666667,
+  "frac_real_within_real_nn95": 0.95,
+  "note": "coverage = share of simulated windows whose feature lies in the real 1-99 % range"
+ },
+ "W_rul": {
+  "note": "v2: run-to-failure / RUL is evaluated in fed/rul.py (SAT_2 wheel, archive thresholds)"
+ }
+}

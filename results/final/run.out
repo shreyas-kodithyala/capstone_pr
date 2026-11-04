@@ -1,0 +1,179 @@
+start 15:48:23
+[    0.6 min] inputs SAT_3: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.6 min] inputs SAT_4: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.6 min] inputs SAT_2: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.6 min] inputs SAT_1: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_2: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_3: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_4: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_1: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] solo SAT_2 params=202,338 rf=1021 seg=2042 bs=6 train_rows<335,376 es_val=[335,376,394,560) device=mps
+[    0.0 min] solo SAT_3 params=202,338 rf=1021 seg=2042 bs=6 train_rows<335,376 es_val=[335,376,394,560) device=mps
+[    0.0 min] solo SAT_1 params=202,338 rf=1021 seg=2042 bs=6 train_rows<335,376 es_val=[335,376,394,560) device=mps
+[    0.0 min] solo SAT_4 params=202,338 rf=1021 seg=2042 bs=6 train_rows<335,376 es_val=[335,376,394,560) device=mps
+[    1.3 min] solo SAT_2 ep1: train=0.24721 val=0.09977 (78s)
+[    1.3 min] solo SAT_1 ep1: train=0.21180 val=0.08485 (79s)
+[    1.3 min] solo SAT_4 ep1: train=0.22343 val=0.07959 (79s)
+[    1.3 min] solo SAT_3 ep1: train=0.19178 val=0.05949 (79s)
+[    2.8 min] solo SAT_1 ep2: train=0.08684 val=0.08293 (87s)
+[    2.8 min] solo SAT_2 ep2: train=0.09696 val=0.08322 (87s)
+[    2.8 min] solo SAT_4 ep2: train=0.08986 val=0.06598 (88s)
+[    2.8 min] solo SAT_3 ep2: train=0.10293 val=0.07804 (88s)
+[    4.3 min] solo SAT_1 ep3: train=0.07875 val=0.06406 (92s)
+[    4.3 min] solo SAT_2 ep3: train=0.07863 val=0.07948 (92s)
+[    4.3 min] solo SAT_4 ep3: train=0.07279 val=0.09105 (93s)
+[    4.4 min] solo SAT_3 ep3: train=0.07498 val=0.05119 (94s)
+[    5.9 min] solo SAT_1 ep4: train=0.06849 val=0.05847 (97s)
+[    5.9 min] solo SAT_2 ep4: train=0.07171 val=0.06407 (97s)
+[    6.0 min] solo SAT_4 ep4: train=0.06515 val=0.05134 (98s)
+[    6.0 min] solo SAT_3 ep4: train=0.10711 val=0.05117 (98s)
+[    7.5 min] solo SAT_2 ep5: train=0.06460 val=0.06283 (96s)
+[    7.5 min] solo SAT_1 ep5: train=0.05888 val=0.05842 (97s)
+[    7.6 min] solo SAT_4 ep5: train=0.05629 val=0.04499 (98s)
+[    7.6 min] solo SAT_3 ep5: train=0.04373 val=0.04243 (96s)
+[    9.2 min] solo SAT_2 ep6: train=0.05872 val=0.05823 (100s)
+[    9.2 min] solo SAT_1 ep6: train=0.06136 val=0.06043 (99s)
+[    9.2 min] solo SAT_4 ep6: train=0.05160 val=0.04216 (99s)
+[    9.3 min] solo SAT_3 ep6: train=0.03902 val=0.03969 (100s)
+[   10.9 min] solo SAT_2 ep7: train=0.06451 val=0.08259 (100s)
+[   10.9 min] solo SAT_1 ep7: train=0.05566 val=0.05698 (101s)
+[   10.9 min] solo SAT_4 ep7: train=0.04998 val=0.04036 (102s)
+[   11.0 min] solo SAT_3 ep7: train=0.03753 val=0.03832 (102s)
+[   12.6 min] solo SAT_2 ep8: train=0.06547 val=0.07057 (104s)
+[   12.6 min] solo SAT_1 ep8: train=0.05611 val=0.08413 (104s)
+[   12.7 min] solo SAT_4 ep8: train=0.04780 val=0.03894 (105s)
+[   12.7 min] solo SAT_3 ep8: train=0.03450 val=0.03655 (104s)
+[   14.3 min] solo SAT_2 ep9: train=0.05810 val=0.06675 (101s)
+[   14.3 min] solo SAT_1 ep9: train=0.06698 val=0.05952 (101s)
+[   14.4 min] solo SAT_4 ep9: train=0.04562 val=0.03852 (102s)
+[   14.4 min] solo SAT_3 ep9: train=0.03213 val=0.03543 (102s)
+[   16.0 min] solo SAT_2 ep10: train=0.05811 val=0.06681 (105s)
+[   16.0 min] solo SAT_2: 10 epochs, best val 0.0582, 16 min
+[   16.0 min] solo SAT_1 ep10: train=0.05431 val=0.05327 (104s)
+[   16.1 min] solo SAT_4 ep10: train=0.04541 val=0.03715 (103s)
+[   16.1 min] solo SAT_3 ep10: train=0.02990 val=0.03594 (102s)
+[   17.4 min] solo SAT_1 ep11: train=0.04896 val=0.05428 (79s)
+[   17.4 min] solo SAT_4 ep11: train=0.04325 val=0.03592 (78s)
+[   17.4 min] solo SAT_3 ep11: train=0.03008 val=0.04076 (78s)
+[   18.7 min] solo SAT_1 ep12: train=0.04971 val=0.05367 (78s)
+[   18.7 min] solo SAT_1: 12 epochs, best val 0.0533, 19 min
+[   18.7 min] solo SAT_4 ep12: train=0.04194 val=0.03475 (76s)
+[   18.7 min] solo SAT_4: 12 epochs, best val 0.0348, 19 min
+[   18.7 min] solo SAT_3 ep12: train=0.02969 val=0.03287 (76s)
+[   18.7 min] solo SAT_3: 12 epochs, best val 0.0329, 19 min
+[   21.2 min] fed round 1: leader SAT_1, mean val 0.5818 SAT_1=0.5786 SAT_2=0.7425 SAT_3=0.4202 SAT_4=0.5857 (108s)
+[   23.0 min] fed round 2: leader SAT_2, mean val 0.1269 SAT_1=0.1396 SAT_2=0.1638 SAT_3=0.0845 SAT_4=0.1196 (106s)
+[   24.7 min] fed round 3: leader SAT_3, mean val 0.1284 SAT_1=0.1524 SAT_2=0.1564 SAT_3=0.0851 SAT_4=0.1197 (105s)
+[   26.5 min] fed round 4: leader SAT_4, mean val 0.0878 SAT_1=0.1037 SAT_2=0.1080 SAT_3=0.0563 SAT_4=0.0831 (109s)
+[   28.3 min] fed round 5: leader SAT_1, mean val 0.0838 SAT_1=0.0971 SAT_2=0.1035 SAT_3=0.0538 SAT_4=0.0809 (107s)
+[   30.1 min] fed round 6: leader SAT_2, mean val 0.0717 SAT_1=0.0831 SAT_2=0.0884 SAT_3=0.0468 SAT_4=0.0685 (109s)
+[   32.0 min] fed round 7: leader SAT_3, mean val 0.0697 SAT_1=0.0804 SAT_2=0.0859 SAT_3=0.0459 SAT_4=0.0666 (112s)
+[   33.9 min] fed round 8: leader SAT_4, mean val 0.0661 SAT_1=0.0759 SAT_2=0.0847 SAT_3=0.0404 SAT_4=0.0635 (114s)
+[   35.8 min] fed round 9: leader SAT_1, mean val 0.0635 SAT_1=0.0730 SAT_2=0.0803 SAT_3=0.0398 SAT_4=0.0608 (116s)
+[   37.8 min] fed round 10: leader SAT_2, mean val 0.0600 SAT_1=0.0689 SAT_2=0.0751 SAT_3=0.0392 SAT_4=0.0568 (117s)
+[   39.6 min] fed round 11: leader SAT_3, mean val 0.0590 SAT_1=0.0695 SAT_2=0.0738 SAT_3=0.0398 SAT_4=0.0531 (113s)
+[   41.5 min] fed round 12: leader SAT_4, mean val 0.0581 SAT_1=0.0678 SAT_2=0.0730 SAT_3=0.0381 SAT_4=0.0534 (111s)
+[    0.0 min] inputs SAT_4: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_3: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_1: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_2: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    1.6 min] pers SAT_3: val 0.0381 -> 0.0281
+[    1.6 min] pers SAT_4: val 0.0534 -> 0.0395
+[    1.6 min] pers SAT_1: val 0.0678 -> 0.0498
+[    1.6 min] pers SAT_2: val 0.0730 -> 0.0589
+[    0.0 min] inputs SAT_4: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_3: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_2: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.0 min] inputs SAT_1: rows 1,051,200 (train 524,160, fit < 394,560), 20 channels, 12 commands
+[    0.8 min] errors solo SAT_3 done
+[    0.9 min] errors solo SAT_4 done
+[    0.9 min] errors solo SAT_2 done
+[    0.9 min] errors solo SAT_1 done
+[    1.7 min] errors fed SAT_3 done
+[    1.7 min] errors fed SAT_4 done
+[    1.7 min] errors fed SAT_2 done
+[    1.7 min] errors fed SAT_1 done
+[    2.5 min] errors pers SAT_4 done
+[    2.5 min] errors pers SAT_3 done
+[    2.5 min] errors pers SAT_2 done
+[    2.5 min] errors pers SAT_1 done
+[    0.0 min] detection: fed
+[    0.0 min] detection: pers
+[    0.0 min] detection: solo
+Traceback (most recent call last):
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 626, in <module>
+    main()
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 602, in main
+    detect_all(D, (a.arm,))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 534, in detect_all
+    loc = {s: search([PER[s]["val"]]) for s in SATS}
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 534, in <dictcomp>
+    loc = {s: search([PER[s]["val"]]) for s in SATS}
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 448, in search
+    f = obj(c)
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 439, in obj
+    cache[k] = float(np.nanmean([f05(p, cfg) for p in pers]))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 439, in <listcomp>
+    cache[k] = float(np.nanmean([f05(p, cfg) for p in pers]))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 427, in f05
+    sc.append(float(ESAScores(betas=BETA, select_labels=sel).score(
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/ext/new_runs/vendor/timeeval/metrics/ESA_ADB_metrics.py", line 173, in score
+    corrected_full_upper_range = max(np.max(events_pred_ns), np.max(events_gt_ns), self.full_range[1].value)
+  File "<__array_function__ internals>", line 5, in amax
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 2754, in amax
+    return _wrapreduction(a, np.maximum, 'max', axis, None, out,
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+ValueError: zero-size array to reduction operation maximum which has no identity
+Traceback (most recent call last):
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 626, in <module>
+    main()
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 602, in main
+    detect_all(D, (a.arm,))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 534, in detect_all
+    loc = {s: search([PER[s]["val"]]) for s in SATS}
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 534, in <dictcomp>
+    loc = {s: search([PER[s]["val"]]) for s in SATS}
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 448, in search
+    f = obj(c)
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 439, in obj
+    cache[k] = float(np.nanmean([f05(p, cfg) for p in pers]))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 439, in <listcomp>
+    cache[k] = float(np.nanmean([f05(p, cfg) for p in pers]))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 427, in f05
+    sc.append(float(ESAScores(betas=BETA, select_labels=sel).score(
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/ext/new_runs/vendor/timeeval/metrics/ESA_ADB_metrics.py", line 173, in score
+    corrected_full_upper_range = max(np.max(events_pred_ns), np.max(events_gt_ns), self.full_range[1].value)
+  File "<__array_function__ internals>", line 5, in amax
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 2754, in amax
+    return _wrapreduction(a, np.maximum, 'max', axis, None, out,
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+ValueError: zero-size array to reduction operation maximum which has no identity
+Traceback (most recent call last):
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 626, in <module>
+    main()
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 602, in main
+    detect_all(D, (a.arm,))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 534, in detect_all
+    loc = {s: search([PER[s]["val"]]) for s in SATS}
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 534, in <dictcomp>
+    loc = {s: search([PER[s]["val"]]) for s in SATS}
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 448, in search
+    f = obj(c)
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 439, in obj
+    cache[k] = float(np.nanmean([f05(p, cfg) for p in pers]))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 439, in <listcomp>
+    cache[k] = float(np.nanmean([f05(p, cfg) for p in pers]))
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/fed/fedsim.py", line 427, in f05
+    sc.append(float(ESAScores(betas=BETA, select_labels=sel).score(
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/ext/new_runs/vendor/timeeval/metrics/ESA_ADB_metrics.py", line 173, in score
+    corrected_full_upper_range = max(np.max(events_pred_ns), np.max(events_gt_ns), self.full_range[1].value)
+  File "<__array_function__ internals>", line 5, in amax
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 2754, in amax
+    return _wrapreduction(a, np.maximum, 'max', axis, None, out,
+  File "/Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+ValueError: zero-size array to reduction operation maximum which has no identity
+stage detect failed: {'solo': 1, 'fed': 1, 'pers': 1}
+end 16:34:50 rc=1

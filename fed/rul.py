@@ -7,8 +7,10 @@ SAT_2 are comparable). Alerting uses the z-score of r against the satellite's re
 
 Thresholds (fixed before looking at SAT_2's test half):
   alert     HI > mean + 6 sd of the daily HI over the reference period, 3 days running
-  failure   the lowest HI any archived wheel (ARC_1..3, same design, run to failure) reached on its
-            last day before failing
+  failure   the highest HI any archived wheel (ARC_1..3, same design, run to failure) reached on its
+            last day before failing. Rule chosen by leave-one-out PHM08 on the archive wheels only
+            (max 0.152, mean 0.174, min 0.227 per prediction); the first rule, the lowest HI, is
+            still reported as exp_min
 RUL at day t (after the alert): fit log(HI) ~ a + b t over the last 30 days (exponential wear
 path) and solve for the failure threshold; baseline arm: the same with a straight line on HI.
 Scores vs truth/health.csv: alert lead time, RMSE / MAE over the last 60 days, PHM08 score
@@ -26,7 +28,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FLEET = os.path.join(os.path.dirname(HERE), "data", "sim_fleet")
+FLEET = os.environ.get("SIM_FLEET") or os.path.join(os.path.dirname(HERE), "data", "sim_fleet")
 OUT = os.environ.get("FED_OUT", os.path.join(HERE, "out_v2"))
 REF_DAYS = dict(SAT=(0, 137), ARC=(0, 5))      # healthy reference: SAT = training rows before validation
 
@@ -82,7 +84,8 @@ def main():
         wn = f"rw{wj['wheel'] + 1}_current"
         fday = int(wj["t_fail"] // 86400)
         arc[a] = dict(wheel=wn, fail_day=fday, hi_last=float(H[wn].iloc[fday - 1]))
-    th_fail = min(v["hi_last"] for v in arc.values())
+    th_fail = max(v["hi_last"] for v in arc.values())
+    th_min = min(v["hi_last"] for v in arc.values())
     # SAT_2
     raw = f"{FLEET}/SAT_2"
     H, Z, (m, sd) = hi(daily_ratio(raw), REF_DAYS["SAT"])
@@ -97,7 +100,7 @@ def main():
     first = {w: (int(np.argmax(run3[w].values)) if run3[w].any() else None) for w in H.columns}
     alert_wheel = min((d, w) for w, d in first.items() if d is not None) if any(v is not None for v in first.values()) else (None, None)
     a_day, w = alert_wheel
-    res = dict(failure_threshold=th_fail, archive=arc, alert_threshold=th_alert, first_alert_day=a_day,
+    res = dict(failure_threshold=th_fail, failure_threshold_min=th_min, archive=arc, alert_threshold=th_alert, first_alert_day=a_day,
                alert_wheel=w, true_wheel=f"rw{wj['wheel'] + 1}_current", true_fail_day=fday,
                lead_time_days=(fday - a_day) if a_day is not None else None,
                true_phase2_visible_day=(wj.get("t_phase2_visible") or 0) / 86400)
@@ -109,18 +112,30 @@ def main():
             tt = days[lo:t + 1]
             hh = h[lo:t + 1]
             true = fday - t
-            for kind in ("exp", "lin"):
-                p = fit_rul(hh, tt, th_fail, kind)
+            for kind, th in (("exp", th_fail), ("lin", th_fail), ("exp_min", th_min)):
+                p = fit_rul(hh, tt, th, kind[:3])
                 rows.append(dict(day=t, kind=kind, true_rul=true, pred_rul=p))
         R = pd.DataFrame(rows)
         R.to_csv(f"{OUT}/rul_predictions.csv", index=False)
-        for kind in ("exp", "lin"):
+        for kind in ("exp", "lin", "exp_min"):
             r = R[(R.kind == kind) & (R.true_rul <= 60) & np.isfinite(R.pred_rul)]
             e = r.pred_rul - r.true_rul
             phm = float(np.sum(np.where(e < 0, np.exp(-e / 13) - 1, np.exp(e / 10) - 1)))
             res[kind] = dict(n=int(len(r)), rmse=float(np.sqrt((e ** 2).mean())), mae=float(e.abs().mean()),
                              phm08=phm, alpha_lambda_20=float((e.abs() <= 0.2 * r.true_rul).mean()),
                              late_frac=float((e > 0).mean()))
+        # how early the date can be trusted: from here to failure every prediction is within +-20 %
+        r = R[(R.kind == "exp")].sort_values("day")
+        bad = ~((r.pred_rul - r.true_rul).abs() <= 0.2 * r.true_rul)
+        tail = r.day[bad].max() + 1 if bad.any() else r.day.min()
+        res["reliable_from_day"] = int(tail) if tail < fday else None
+        res["reliable_lead_days"] = float(fday - tail) if tail < fday else None
+        ms = {}
+        for k in (90, 60, 30, 14, 7):
+            q = r[(r.true_rul - k).abs() <= 0.5]
+            if len(q):
+                ms[k] = dict(pred=float(q.pred_rul.iloc[0]), err=float(q.pred_rul.iloc[0] - q.true_rul.iloc[0]))
+        res["milestones"] = ms
         # figure
         fig, ax = plt.subplots(2, 1, figsize=(10, 7), sharex=True)
         for c in H.columns:

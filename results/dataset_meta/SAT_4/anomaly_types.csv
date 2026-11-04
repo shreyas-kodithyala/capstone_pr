@@ -1,0 +1,39 @@
+ID,Class,Subclass,Category,Dimensionality,Locality,Length
+id_1,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_3,rw_friction_spike,rw4,Anomaly,Multivariate,Local,Subsequence
+id_4,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_6,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_9,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_10,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_11,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_12,safe_mode_drill,aocs,Rare Event,Multivariate,Global,Subsequence
+id_16,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_17,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_20,safe_mode_drill,aocs,Rare Event,Multivariate,Global,Subsequence
+id_21,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_22,str_outage,star_tracker,Anomaly,Univariate,Local,Subsequence
+id_23,rw_friction_spike,rw1,Anomaly,Multivariate,Local,Subsequence
+id_24,gyro_spikes,gyro_y,Anomaly,Univariate,Global,Subsequence
+id_25,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_28,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_30,rw_drive_dropout,rw3,Anomaly,Multivariate,Local,Subsequence
+id_33,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_35,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_37,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_39,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_40,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_41,safe_mode_drill,aocs,Rare Event,Multivariate,Global,Subsequence
+id_42,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_43,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_44,sa_string_open,solar_array,Anomaly,Univariate,Local,Subsequence
+id_45,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_46,uncommanded_load,power_bus,Anomaly,Multivariate,Global,Subsequence
+id_47,uncommanded_load,power_bus,Anomaly,Multivariate,Local,Subsequence
+id_49,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_53,heater_stuck_on,battery_heater,Anomaly,Multivariate,Global,Subsequence
+id_54,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_55,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_56,safe_mode_drill,aocs,Rare Event,Multivariate,Global,Subsequence
+id_57,sa_string_open,solar_array,Anomaly,Multivariate,Local,Subsequence
+id_58,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_59,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence

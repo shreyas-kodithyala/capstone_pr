@@ -1,0 +1,67 @@
+
+## SAT_1 (trained on ['F2'])
+arm sel | val | F.5all P R | F.5anom P R | alarmP | caught | seen unseen | rare | FAev FA/30d FAshare FAtime% | delay attr | chanF.5 subF.5 affF.5 ADTQCafter | setting
+solo local       | 0.930 | 0.781 1.000 0.417 | 0.000 0.000 0.000 | 0.000 | 0/6 | 0.00 0.00 | 5/6 | 0 0.0 0.00 0.02 | - - | 0.000 0.000 0.000 nan | a120 own m20 s5 c60 h0 l10 W1m s15
+solo federated   | 0.930 | 0.909 0.999 0.667 | 0.833 0.999 0.500 | 1.000 | 3/6 | 1.00 0.40 | 5/6 | 0 0.0 0.00 0.07 | 0 0.33 | 0.113 0.247 0.682 1.00 | k5 own m20 s5 c60 h0 l10 Wall s15
+fed  local       | 0.999 | 0.833 1.000 0.500 | 0.500 1.000 0.167 | 1.000 | 1/6 | 1.00 0.00 | 5/6 | 0 0.0 0.00 0.02 | 18 0.00 | 0.011 0.064 0.389 1.00 | a50 own m20 s5 c60 h0 l10 Wall s15
+fed  federated   | 0.999 | 0.795 0.874 0.583 | 0.555 0.666 0.333 | 1.000 | 2/6 | 1.00 0.20 | 5/6 | 1 0.2 0.12 0.06 | 4 1.00 | 0.278 0.333 0.556 1.00 | k3 own m20 s5 c60 h0 l10 Wall s15
+pers local       | 0.999 | 0.833 0.889 0.667 | 0.682 0.750 0.500 | 0.273 | 3/6 | 1.00 0.40 | 5/6 | 1 0.2 0.06 0.03 | 22 1.00 | 0.361 0.472 0.682 1.00 | k5 own m20 s5 c60 h0 l10 Wall s15
+pers federated   | 0.998 | 0.892 0.908 0.833 | 0.832 0.832 0.833 | 1.000 | 5/6 | 1.00 0.80 | 5/6 | 1 0.2 0.09 0.13 | 1 0.60 | 0.363 0.581 0.898 1.00 | k3 fleet m20 s10 c60 h0 l10 W1m s15
+by family: {'solo/local': {'F1': 0.0, 'F2': 0.0, 'F3': 0.0}, 'solo/federated': {'F1': 0.5, 'F2': 1.0, 'F3': 0.333}, 'fed/local': {'F1': 0.0, 'F2': 1.0, 'F3': 0.0}, 'fed/federated': {'F1': 0.5, 'F2': 1.0, 'F3': 0.0}, 'pers/local': {'F1': 0.5, 'F2': 1.0, 'F3': 0.333}, 'pers/federated': {'F1': 1.0, 'F2': 1.0, 'F3': 0.667}}
+
+## SAT_2 (trained on ['F1'])
+arm sel | val | F.5all P R | F.5anom P R | alarmP | caught | seen unseen | rare | FAev FA/30d FAshare FAtime% | delay attr | chanF.5 subF.5 affF.5 ADTQCafter | setting
+solo local       | 0.896 | 0.670 0.645 0.795 | 0.636 0.607 0.788 | 0.096 | 26/33 | 0.84 0.62 | 5/6 | 15 2.5 0.05 4.28 | 0 0.81 | 0.386 0.359 0.776 0.77 | k5 own m20 s5 c60 h0 l10 Wall s15
+solo federated   | 0.896 | 0.670 0.645 0.795 | 0.636 0.607 0.788 | 0.096 | 26/33 | 0.84 0.62 | 5/6 | 15 2.5 0.05 4.28 | 0 0.81 | 0.386 0.359 0.776 0.77 | k5 own m20 s5 c60 h0 l10 Wall s15
+fed  local       | 0.897 | 0.878 0.868 0.923 | 0.870 0.854 0.939 | 0.095 | 31/33 | 0.92 1.00 | 5/6 | 4 0.7 0.01 3.54 | 1 0.90 | 0.565 0.922 0.937 0.93 | k3 own m20 s5 c60 h0 l10 Wall s15
+fed  federated   | 0.897 | 0.878 0.868 0.923 | 0.870 0.854 0.939 | 0.095 | 31/33 | 0.92 1.00 | 5/6 | 4 0.7 0.01 3.54 | 1 0.90 | 0.565 0.922 0.937 0.93 | k3 own m20 s5 c60 h0 l10 Wall s15
+pers local       | 0.895 | 0.397 0.348 0.923 | 0.365 0.316 0.939 | 0.092 | 31/33 | 0.96 0.88 | 5/6 | 58 9.5 0.14 9.15 | 0 0.77 | 0.429 0.399 0.869 0.74 | k3 own m20 s5 c60 h0 l10 Wall s15
+pers federated   | 0.896 | 0.923 0.929 0.897 | 0.919 0.921 0.909 | 0.261 | 30/33 | 0.92 0.88 | 5/6 | 2 0.3 0.02 1.73 | 0 0.77 | 0.410 0.387 0.933 0.90 | k3 fleet m20 s10 c60 h0 l10 W1m s15
+by family: {'solo/local': {'F1': 0.84, 'F2': 0.625}, 'solo/federated': {'F1': 0.84, 'F2': 0.625}, 'fed/local': {'F1': 0.92, 'F2': 1.0}, 'fed/federated': {'F1': 0.92, 'F2': 1.0}, 'pers/local': {'F1': 0.96, 'F2': 0.875}, 'pers/federated': {'F1': 0.92, 'F2': 0.875}}
+
+## SAT_3 (trained on ['F3'])
+arm sel | val | F.5all P R | F.5anom P R | alarmP | caught | seen unseen | rare | FAev FA/30d FAshare FAtime% | delay attr | chanF.5 subF.5 affF.5 ADTQCafter | setting
+solo local       | 0.992 | 0.776 0.735 1.000 | 0.736 0.691 1.000 | 1.000 | 15/15 | 1.00 1.00 | 4/4 | 6 1.0 0.25 3.29 | 0 0.27 | 0.206 0.451 0.842 0.67 | k2 own m20 s5 c60 h0 l10 Wall s15
+solo federated   | 0.714 | 0.774 0.845 0.579 | 0.686 0.777 0.467 | 1.000 | 7/15 | 0.33 0.56 | 4/4 | 2 0.3 0.15 0.08 | 2 0.29 | 0.075 0.264 0.657 0.83 | k5 own m20 s5 c60 h0 l10 Wall s15
+fed  local       | 0.902 | 0.736 0.697 0.947 | 0.688 0.646 0.933 | 1.000 | 14/15 | 0.83 1.00 | 4/4 | 7 1.1 0.29 3.16 | 1 0.29 | 0.200 0.444 0.783 0.79 | k2 own m20 s5 c60 h0 l10 Wall s15
+fed  federated   | 0.714 | 0.915 1.000 0.684 | 0.882 1.000 0.600 | 1.000 | 9/15 | 0.33 0.78 | 4/4 | 0 0.0 0.00 0.03 | 18 1.00 | 0.511 0.578 0.749 1.00 | k3 own m20 s5 c60 h0 l10 Wall s15
+pers local       | 0.992 | 0.705 0.657 1.000 | 0.657 0.605 1.000 | 1.000 | 15/15 | 1.00 1.00 | 4/4 | 9 1.5 0.33 3.18 | 0 0.27 | 0.219 0.492 0.826 0.73 | k2 own m20 s5 c60 h0 l10 Wall s15
+pers federated   | 0.909 | 0.845 0.923 0.632 | 0.784 0.888 0.533 | 1.000 | 8/15 | 0.33 0.67 | 4/4 | 1 0.2 0.08 0.05 | 0 0.50 | 0.151 0.298 0.744 0.88 | k3 fleet m20 s10 c60 h0 l10 W1m s15
+by family: {'solo/local': {'F1': 1.0, 'F2': 1.0, 'F3': 1.0}, 'solo/federated': {'F1': 0.5, 'F2': 0.6, 'F3': 0.333}, 'fed/local': {'F1': 1.0, 'F2': 1.0, 'F3': 0.833}, 'fed/federated': {'F1': 0.5, 'F2': 1.0, 'F3': 0.333}, 'pers/local': {'F1': 1.0, 'F2': 1.0, 'F3': 1.0}, 'pers/federated': {'F1': 0.75, 'F2': 0.6, 'F3': 0.333}}
+
+## SAT_4 (trained on ['F1', 'F2'])
+arm sel | val | F.5all P R | F.5anom P R | alarmP | caught | seen unseen | rare | FAev FA/30d FAshare FAtime% | delay attr | chanF.5 subF.5 affF.5 ADTQCafter | setting
+solo local       | 0.878 | 0.788 0.787 0.789 | 0.200 0.199 0.200 | 0.500 | 1/5 | - 0.20 | 14/14 | 4 0.7 0.20 0.25 | 6 0.00 | 0.038 0.143 0.428 1.00 | k5 own m20 s5 c60 h0 l10 Wall s15
+solo federated   | 0.878 | 0.788 0.787 0.789 | 0.200 0.199 0.200 | 0.500 | 1/5 | - 0.20 | 14/14 | 4 0.7 0.20 0.25 | 6 0.00 | 0.038 0.143 0.428 1.00 | k5 own m20 s5 c60 h0 l10 Wall s15
+fed  local       | 0.878 | 0.307 0.264 0.895 | 0.073 0.060 0.600 | 0.273 | 3/5 | - 0.60 | 14/14 | 47 7.7 0.65 0.69 | 0 1.00 | 0.486 0.533 0.747 1.00 | k1.5 own m20 s5 c60 h0 l10 Wall s15
+fed  federated   | 0.747 | 0.418 0.371 0.842 | 0.082 0.069 0.400 | 0.500 | 2/5 | - 0.40 | 14/14 | 27 4.4 0.60 0.22 | 40 1.00 | 0.310 0.333 0.606 1.00 | k3 own m20 s5 c60 h0 l10 Wall s15
+pers local       | 0.879 | 0.823 0.832 0.789 | 0.238 0.250 0.200 | 0.500 | 1/5 | - 0.20 | 14/14 | 3 0.5 0.16 0.19 | 7 0.00 | 0.038 0.143 0.428 1.00 | k5 own m20 s5 c60 h0 l10 W1m s15
+pers federated   | 0.879 | 0.948 0.999 0.789 | 0.555 0.999 0.200 | 0.500 | 1/5 | - 0.20 | 14/14 | 0 0.0 0.00 0.13 | 11 0.00 | 0.038 0.143 0.428 1.00 | k3 fleet m20 s10 c60 h0 l10 W1m s15
+by family: {'solo/local': {'F3': 0.2}, 'solo/federated': {'F3': 0.2}, 'fed/local': {'F3': 0.6}, 'fed/federated': {'F3': 0.4}, 'pers/local': {'F3': 0.2}, 'pers/federated': {'F3': 0.2}}
+
+## Same setting for every arm (model effect only): F0.5 anomalies / caught / false alarms
+setting chosen by the fleet on solo errors: k5 own m20 s5 c60 h0 l10 Wall s15
+  SAT_1: solo 0.833 3/6 FA 0 | fed 0.714 2/6 FA 0 | pers 0.577 3/6 FA 2
+  SAT_2: solo 0.636 26/33 FA 15 | fed 0.857 27/33 FA 3 | pers 0.862 30/33 FA 4
+  SAT_3: solo 0.686 7/15 FA 2 | fed 0.645 4/15 FA 0 | pers 0.769 6/15 FA 0
+  SAT_4: solo 0.200 1/5 FA 4 | fed 0.111 1/5 FA 9 | pers 0.294 1/5 FA 2
+setting chosen by the fleet on fed errors: k3 own m20 s5 c60 h0 l10 Wall s15
+  SAT_1: solo 0.476 4/6 FA 5 | fed 0.555 2/6 FA 1 | pers 0.394 3/6 FA 5
+  SAT_2: solo 0.191 29/33 FA 138 | fed 0.870 31/33 FA 4 | pers 0.421 31/33 FA 49
+  SAT_3: solo 0.633 9/15 FA 5 | fed 0.882 9/15 FA 0 | pers 0.882 9/15 FA 0
+  SAT_4: solo 0.270 2/5 FA 6 | fed 0.082 2/5 FA 27 | pers 0.175 2/5 FA 11
+setting chosen by the fleet on pers errors: k3 fleet m20 s10 c60 h0 l10 W1m s15
+  SAT_1: solo 0.526 4/6 FA 4 | fed 0.714 2/6 FA 0 | pers 0.832 5/6 FA 1
+  SAT_2: solo 0.852 30/33 FA 5 | fed 0.919 31/33 FA 2 | pers 0.919 30/33 FA 2
+  SAT_3: solo 0.745 10/15 FA 3 | fed 0.714 5/15 FA 0 | pers 0.784 8/15 FA 1
+  SAT_4: solo 0.384 1/5 FA 1 | fed 0.000 0/5 FA 15 | pers 0.555 1/5 FA 0
+
+federated settings: {'solo': {'cfg': {'L': 0, 'W': 'all', 'close': 60, 'cross': 0.3, 'drift': 0, 'hyst': 1.0, 'minlen': 10, 'onset': 0, 'spans': 's15', 'std': 0, 'thr': 'k5', 'tele': None, 'mask': 20, 'smask': 5, 'ceil': 'own', 'latch': 0}, 'mean_val': 0.8546764116258158}, 'fed': {'cfg': {'L': 0, 'W': 'all', 'close': 60, 'cross': 0, 'drift': 0, 'hyst': 1.0, 'minlen': 10, 'onset': 0, 'spans': 's15', 'std': 0, 'thr': 'k3', 'tele': None, 'mask': 20, 'smask': 5, 'ceil': 'own', 'latch': 0}, 'mean_val': 0.8394330575703184}, 'pers': {'cfg': {'L': 0, 'W': '1m', 'close': 60, 'cross': 0.3, 'drift': 0, 'hyst': 1.0, 'minlen': 10, 'onset': 0, 'spans': 's15', 'std': 0, 'thr': 'k3', 'tele': None, 'mask': 20, 'smask': 10, 'ceil': 'fleet', 'latch': 0}, 'mean_val': 0.9205576285616996}}
+
+RUL: {'alert_wheel': 'rw2_current', 'true_wheel': 'rw2_current', 'first_alert_day': 256, 'true_fail_day': 356.1076388888889, 'lead_time_days': 100.10763888888891, 'true_phase2_visible_day': 296.0, 'failure_threshold': 65.25000000000001}
+exp: {'n': 59, 'rmse': 2.440673886275055, 'mae': 2.1716866992592845, 'phm08': 11.373500619481193, 'alpha_lambda_20': 0.8305084745762712, 'late_frac': 0.15254237288135594} 
+exp_min: {'n': 59, 'rmse': 3.2790828779475896, 'mae': 2.9524938733486685, 'phm08': 15.616127476135201, 'alpha_lambda_20': 0.6271186440677966, 'late_frac': 0.0847457627118644} 
+lin: {'n': 59, 'rmse': 408.1080204726226, 'mae': 270.98010022413354, 'phm08': 1.0545079609747595e+47, 'alpha_lambda_20': 0.0, 'late_frac': 1.0}
+reliable: {'reliable_from_day': 356, 'reliable_lead_days': 0.10763888888891415, 'milestones': {'90': {'pred': nan, 'err': nan}, '60': {'pred': 60.07625941751235, 'err': -0.03137947137656738}, '30': {'pred': 25.965998247742846, 'err': -4.1416406411460684}, '14': {'pred': 11.390543621273935, 'err': -2.7170952676149795}, '7': {'pred': 5.069544994412183, 'err': -2.038093894476731}}}
+
+baselines (anomalies only, F0.5): {'SAT_1': {'out_of_limit': 0.5, 'GlobalSTD3': 0.005, 'GlobalSTD5': 0.009, 'iForest': 0.006}, 'SAT_2': {'out_of_limit': 0.372, 'GlobalSTD3': 0.01, 'GlobalSTD5': 0.019, 'iForest': 0.014}, 'SAT_3': {'out_of_limit': 0.37, 'GlobalSTD3': 0.013, 'GlobalSTD5': 0.034, 'iForest': 0.004}, 'SAT_4': {'out_of_limit': 0.588, 'GlobalSTD3': 0.002, 'GlobalSTD5': 0.002, 'iForest': 0.003}}

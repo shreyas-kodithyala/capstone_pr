@@ -1,0 +1,5 @@
+SAT_1 [{'cut': 158112, 'alarm_rows': 93, 'diff_before_limit': 0, 'diff_in_last_70': 0}, {'cut': 316224, 'alarm_rows': 604, 'diff_before_limit': 0, 'diff_in_last_70': 0}, {'cut': 447984, 'alarm_rows': 604, 'diff_before_limit': 0, 'diff_in_last_70': 0}]
+SAT_2 [{'cut': 158112, 'alarm_rows': 3174, 'diff_before_limit': 0, 'diff_in_last_70': 0}, {'cut': 316224, 'alarm_rows': 6003, 'diff_before_limit': 0, 'diff_in_last_70': 0}, {'cut': 447984, 'alarm_rows': 75774, 'diff_before_limit': 0, 'diff_in_last_70': 0}]
+SAT_3 [{'cut': 158112, 'alarm_rows': 6790, 'diff_before_limit': 0, 'diff_in_last_70': 0}, {'cut': 316224, 'alarm_rows': 9413, 'diff_before_limit': 0, 'diff_in_last_70': 0}, {'cut': 447984, 'alarm_rows': 15099, 'diff_before_limit': 0, 'diff_in_last_70': 0}]
+SAT_4 [{'cut': 158112, 'alarm_rows': 583, 'diff_before_limit': 0, 'diff_in_last_70': 0}, {'cut': 316224, 'alarm_rows': 1474, 'diff_before_limit': 0, 'diff_in_last_70': 0}, {'cut': 447984, 'alarm_rows': 3341, 'diff_before_limit': 0, 'diff_in_last_70': 0}]
+PAST-ONLY CHECK PASSED

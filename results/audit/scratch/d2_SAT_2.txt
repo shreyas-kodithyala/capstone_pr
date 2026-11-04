@@ -1,0 +1,6 @@
+##### SAT_2 pers
+[val] FP 0 (0.0/30d) alarm-time 0.01%
+[test] FP 45 (7.4/30d) alarm-time 3.20%
+   by channel {'bat_temp': 43, 'rw1_speed': 2}
+   last cmd {'PAYLOAD_OFF': 41, 'TX_OFF': 3, 'MTQ_DUMP': 1} med since 30 min | <45min 89% | within 6h after event 4% | within 5min of eclipse edge 2% | dur med 39 max 252 min | peak z med 23
+   FP per 30-day bin [27, 16, 0, 0, 0, 2]

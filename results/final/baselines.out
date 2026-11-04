@@ -1,0 +1,4 @@
+SAT_1 {'out_of_limit': 0.833, 'GlobalSTD3': 0.009, 'GlobalSTD5': 0.018, 'iForest': 0.032}
+SAT_2 {'out_of_limit': 0.524, 'GlobalSTD3': 0.012, 'GlobalSTD5': 0.024, 'iForest': 0.02}
+SAT_3 {'out_of_limit': 0.638, 'GlobalSTD3': 0.017, 'GlobalSTD5': 0.047, 'iForest': 0.005}
+SAT_4 {'out_of_limit': 0.92, 'GlobalSTD3': 0.009, 'GlobalSTD5': 0.007, 'iForest': 0.015}

@@ -1,0 +1,21 @@
+Channel,Name,Description,Subsystem,SubsystemName,Physical Unit,Group,Target,NativeRate_s
+channel_1,rw1_speed,Reaction wheel 1 speed,subsystem_1,AOCS,rpm,1,YES,15
+channel_2,rw2_speed,Reaction wheel 2 speed,subsystem_1,AOCS,rpm,1,YES,15
+channel_3,rw3_speed,Reaction wheel 3 speed,subsystem_1,AOCS,rpm,1,YES,15
+channel_4,rw4_speed,Reaction wheel 4 speed,subsystem_1,AOCS,rpm,1,YES,15
+channel_5,rw1_current,Reaction wheel 1 motor current,subsystem_1,AOCS,A,2,YES,15
+channel_6,rw2_current,Reaction wheel 2 motor current,subsystem_1,AOCS,A,2,YES,15
+channel_7,rw3_current,Reaction wheel 3 motor current,subsystem_1,AOCS,A,2,YES,15
+channel_8,rw4_current,Reaction wheel 4 motor current,subsystem_1,AOCS,A,2,YES,15
+channel_9,gyro_x,Gyro body rate x,subsystem_1,AOCS,deg/s,5,YES,15
+channel_10,gyro_y,Gyro body rate y,subsystem_1,AOCS,deg/s,5,YES,15
+channel_11,gyro_z,Gyro body rate z,subsystem_1,AOCS,deg/s,5,YES,15
+channel_12,att_err,Total attitude error (estimate),subsystem_1,AOCS,deg,6,YES,15
+channel_13,mag_x,Magnetometer x,subsystem_1,AOCS,nT,7,YES,30
+channel_14,mag_y,Magnetometer y,subsystem_1,AOCS,nT,7,YES,30
+channel_15,mag_z,Magnetometer z,subsystem_1,AOCS,nT,7,YES,30
+channel_16,sa_power,Solar array power,subsystem_2,EPS,W,10,YES,30
+channel_17,bat_voltage,Battery voltage,subsystem_2,EPS,V,11,YES,30
+channel_18,bus_load,Bus load power,subsystem_2,EPS,W,12,YES,30
+channel_19,bat_temp,Battery temperature,subsystem_3,THERMAL,degC,13,YES,60
+channel_20,aocs_mode,"AOCS mode (0 nadir,1 target,2 cal,3 inertial,4 safe)",subsystem_1,AOCS,enum,15,NO,60

@@ -22,7 +22,7 @@ import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-FLEET = os.path.join(ROOT, "data", "sim_fleet")
+FLEET = os.environ.get("SIM_FLEET") or os.path.join(ROOT, "data", "sim_fleet")
 OUT = os.path.join(FLEET, "validation", "model_check")
 sys.path.insert(0, (os.environ.get("NEW_RUNS") or (os.path.join(ROOT, "ext", "new_runs") if os.path.isdir(os.path.join(ROOT, "ext", "new_runs")) else os.path.join(os.path.dirname(ROOT), "ESA", "Main", "new_runs"))))
 sys.path.insert(0, HERE)

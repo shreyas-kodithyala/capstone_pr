@@ -174,7 +174,7 @@ FAULTS = {
     "C2": dict(cls="bat_impedance_rise", family="C", kind="power", subsystem="EPS", dur=(6.0, 48.0), sev=2,
                mode="Battery cell impedance rise x3 (cell degradation episode)"),
     "C3": dict(cls="uncommanded_load", family="C", kind="power", subsystem="EPS", dur=(10 / 60, 1.0), sev=1,
-               mode="Unit latch-up: +50-90 W until current limiter trips"),
+               mode="Unit latch-up: +90-160 W until current limiter trips"),
     "C4": dict(cls="payload_no_power", family="C", kind="power", subsystem="EPS", dur=(0.0, 0.0), sev=2,
                mode="PAYLOAD_ON command, payload does not draw power (wrong response)"),
     # Family D: thermal (post-processing)

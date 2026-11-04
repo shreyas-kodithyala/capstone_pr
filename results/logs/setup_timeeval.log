@@ -1,0 +1,257 @@
+Channels:
+ - conda-forge
+Platform: osx-arm64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /Users/anil.kodithyala/Downloads/Capstone/capstone_pr/.localenv/miniforge/envs/timeeval
+
+  added / updated specs:
+    - matplotlib
+    - numpy=1.21.6
+    - pandas=1.5.3
+    - psutil
+    - python=3.9
+    - scikit-learn
+    - scipy
+    - statsmodels
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _openmp_mutex-4.5          |       8_kmp_llvm           8 KB  conda-forge
+    brotli-1.2.1               |       hf00d406_0          20 KB  conda-forge
+    brotli-bin-1.2.1           |       he4a93e4_0          18 KB  conda-forge
+    brotli-python-1.0.9        |   py39h23fbdae_8         365 KB  conda-forge
+    certifi-2025.8.3           |     pyhd8ed1ab_0         155 KB  conda-forge
+    cffi-1.17.1                |   py39h7f933ea_0         222 KB  conda-forge
+    charset-normalizer-3.4.3   |     pyhd8ed1ab_0          50 KB  conda-forge
+    contourpy-1.2.1            |   py39h48c5dd5_0         220 KB  conda-forge
+    cycler-0.12.1              |     pyhd8ed1ab_1          13 KB  conda-forge
+    fonttools-4.59.1           |   py39hb270ea8_0         2.2 MB  conda-forge
+    freetype-2.14.3            |       hce30654_2         171 KB  conda-forge
+    h2-4.2.0                   |     pyhd8ed1ab_0          53 KB  conda-forge
+    hpack-4.1.0                |     pyhd8ed1ab_0          30 KB  conda-forge
+    idna-3.11                  |     pyhf9edf01_1          58 KB  conda-forge
+    importlib-resources-6.5.2  |     pyhd8ed1ab_0           9 KB  conda-forge
+    importlib_resources-6.5.2  |     pyhd8ed1ab_0          33 KB  conda-forge
+    joblib-1.5.1               |     pyhd8ed1ab_0         219 KB  conda-forge
+    kiwisolver-1.4.7           |   py39h157d57c_0          58 KB  conda-forge
+    lcms2-2.20                 |       hce41798_0         208 KB  conda-forge
+    lerc-4.3.0                 |       h0699d0c_0         184 KB  conda-forge
+    libblas-3.9.0              |20_osxarm64_openblas          14 KB  conda-forge
+    libbrotlicommon-1.2.1      |       h1dcdb26_0          78 KB  conda-forge
+    libbrotlidec-1.2.1         |       h5295a6a_0          29 KB  conda-forge
+    libbrotlienc-1.2.1         |       h2ddc9cb_0         289 KB  conda-forge
+    libcblas-3.9.0             |20_osxarm64_openblas          14 KB  conda-forge
+    libcxx-23.1.4              |       h55c6f16_2         564 KB  conda-forge
+    libdeflate-1.25            |       he7e0567_1          54 KB  conda-forge
+    libfreetype-2.14.3         |       hce30654_2           8 KB  conda-forge
+    libfreetype6-2.14.3        |       h2ed5691_2         333 KB  conda-forge
+    libgcc-16.2.0              |       h3cf6597_7         357 KB  conda-forge
+    libgfortran-16.2.0         |       h07b0088_7          97 KB  conda-forge
+    libgfortran5-16.2.0        |       hdb7a957_7         542 KB  conda-forge
+    libjpeg-turbo-3.2.1        |       hb001647_0         543 KB  conda-forge
+    liblapack-3.9.0            |20_osxarm64_openblas          14 KB  conda-forge
+    libopenblas-0.3.25         |openmp_h6c19121_0         2.8 MB  conda-forge
+    libpng-1.6.59              |       hf5e6511_0         283 KB  conda-forge
+    libtiff-4.7.2              |       hf67920b_1         372 KB  conda-forge
+    libwebp-base-1.6.0         |       h202fb40_1         288 KB  conda-forge
+    libxcb-1.17.0              |       hbffa61f_2         317 KB  conda-forge
+    llvm-openmp-23.1.4         |       hdb3d66b_0         281 KB  conda-forge
+    matplotlib-3.8.4           |   py39hdf13c20_2           8 KB  conda-forge
+    matplotlib-base-3.8.4      |   py39h15359f4_2         6.5 MB  conda-forge
+    munkres-1.1.4              |     pyhd8ed1ab_1          15 KB  conda-forge
+    numpy-1.21.6               |   py39h690d673_0         5.3 MB  conda-forge
+    openjpeg-2.5.4             |       h4d1e80c_2         369 KB  conda-forge
+    pandas-1.5.3               |   py39hde7b980_1        10.6 MB  conda-forge
+    patsy-1.0.1                |     pyhd8ed1ab_1         182 KB  conda-forge
+    pillow-11.3.0              |   py39hfea3036_0        40.1 MB  conda-forge
+    pip-25.2                   |     pyh8b19718_0         1.1 MB  conda-forge
+    platformdirs-4.3.8         |     pyhe01879c_0          23 KB  conda-forge
+    pooch-1.8.2                |     pyhd8ed1ab_3          54 KB  conda-forge
+    psutil-7.0.0               |   py39hf3bc14e_0         349 KB  conda-forge
+    pthread-stubs-0.4          |    hb001647_1004           9 KB  conda-forge
+    pycparser-2.22             |     pyh29332c3_1         108 KB  conda-forge
+    pyparsing-3.2.3            |     pyhe01879c_2         100 KB  conda-forge
+    python-3.9.23              |h7139b31_0_cpython        10.5 MB  conda-forge
+    python-dateutil-2.9.0.post0|     pyhe01879c_2         228 KB  conda-forge
+    python_abi-3.9             |           9_cp39           7 KB  conda-forge
+    pytz-2025.2                |     pyhd8ed1ab_0         185 KB  conda-forge
+    requests-2.32.5            |     pyhd8ed1ab_0          58 KB  conda-forge
+    scikit-learn-1.6.1         |   py39h451895d_0         8.2 MB  conda-forge
+    scipy-1.11.2               |   py39ha6b2cbd_0        13.9 MB  conda-forge
+    setuptools-80.9.0          |     pyhff2d567_0         731 KB  conda-forge
+    six-1.17.0                 |     pyhe01879c_1          18 KB  conda-forge
+    statsmodels-0.14.2         |   py39h161d348_0         9.9 MB  conda-forge
+    threadpoolctl-3.6.0        |     pyhecae5ae_0          23 KB  conda-forge
+    tornado-6.5.2              |   py39he7485ab_0         638 KB  conda-forge
+    unicodedata2-16.0.0        |   py39hf3bc14e_0         400 KB  conda-forge
+    urllib3-2.5.0              |     pyhd8ed1ab_0          99 KB  conda-forge
+    wheel-0.45.1               |     pyhd8ed1ab_1          61 KB  conda-forge
+    xorg-libxau-1.0.12         |       hb001647_2          17 KB  conda-forge
+    xorg-libxdmcp-1.1.5        |       hb001647_2          21 KB  conda-forge
+    zipp-3.23.0                |     pyhd8ed1ab_0          22 KB  conda-forge
+    zstandard-0.23.0           |   py39he7485ab_3         488 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:       121.5 MB
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/osx-arm64::_openmp_mutex-4.5-8_kmp_llvm 
+  brotli             conda-forge/osx-arm64::brotli-1.2.1-hf00d406_0 
+  brotli-bin         conda-forge/osx-arm64::brotli-bin-1.2.1-he4a93e4_0 
+  brotli-python      conda-forge/osx-arm64::brotli-python-1.0.9-py39h23fbdae_8 
+  bzip2              conda-forge/osx-arm64::bzip2-1.0.8-h4e30115_10 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.10.23-hbd8a1cb_0 
+  certifi            conda-forge/noarch::certifi-2025.8.3-pyhd8ed1ab_0 
+  cffi               conda-forge/osx-arm64::cffi-1.17.1-py39h7f933ea_0 
+  charset-normalizer conda-forge/noarch::charset-normalizer-3.4.3-pyhd8ed1ab_0 
+  contourpy          conda-forge/osx-arm64::contourpy-1.2.1-py39h48c5dd5_0 
+  cycler             conda-forge/noarch::cycler-0.12.1-pyhd8ed1ab_1 
+  fonttools          conda-forge/osx-arm64::fonttools-4.59.1-py39hb270ea8_0 
+  freetype           conda-forge/osx-arm64::freetype-2.14.3-hce30654_2 
+  h2                 conda-forge/noarch::h2-4.2.0-pyhd8ed1ab_0 
+  hpack              conda-forge/noarch::hpack-4.1.0-pyhd8ed1ab_0 
+  hyperframe         conda-forge/noarch::hyperframe-6.1.0-pyhd8ed1ab_0 
+  idna               conda-forge/noarch::idna-3.11-pyhf9edf01_1 
+  importlib-resourc~ conda-forge/noarch::importlib-resources-6.5.2-pyhd8ed1ab_0 
+  importlib_resourc~ conda-forge/noarch::importlib_resources-6.5.2-pyhd8ed1ab_0 
+  joblib             conda-forge/noarch::joblib-1.5.1-pyhd8ed1ab_0 
+  kiwisolver         conda-forge/osx-arm64::kiwisolver-1.4.7-py39h157d57c_0 
+  lcms2              conda-forge/osx-arm64::lcms2-2.20-hce41798_0 
+  lerc               conda-forge/osx-arm64::lerc-4.3.0-h0699d0c_0 
+  libblas            conda-forge/osx-arm64::libblas-3.9.0-20_osxarm64_openblas 
+  libbrotlicommon    conda-forge/osx-arm64::libbrotlicommon-1.2.1-h1dcdb26_0 
+  libbrotlidec       conda-forge/osx-arm64::libbrotlidec-1.2.1-h5295a6a_0 
+  libbrotlienc       conda-forge/osx-arm64::libbrotlienc-1.2.1-h2ddc9cb_0 
+  libcblas           conda-forge/osx-arm64::libcblas-3.9.0-20_osxarm64_openblas 
+  libcxx             conda-forge/osx-arm64::libcxx-23.1.4-h55c6f16_2 
+  libdeflate         conda-forge/osx-arm64::libdeflate-1.25-he7e0567_1 
+  libexpat           conda-forge/osx-arm64::libexpat-2.9.0-h6111c0a_0 
+  libffi             conda-forge/osx-arm64::libffi-3.7.0-h47dc5ef_1 
+  libfreetype        conda-forge/osx-arm64::libfreetype-2.14.3-hce30654_2 
+  libfreetype6       conda-forge/osx-arm64::libfreetype6-2.14.3-h2ed5691_2 
+  libgcc             conda-forge/osx-arm64::libgcc-16.2.0-h3cf6597_7 
+  libgfortran        conda-forge/osx-arm64::libgfortran-16.2.0-h07b0088_7 
+  libgfortran5       conda-forge/osx-arm64::libgfortran5-16.2.0-hdb7a957_7 
+  libjpeg-turbo      conda-forge/osx-arm64::libjpeg-turbo-3.2.1-hb001647_0 
+  liblapack          conda-forge/osx-arm64::liblapack-3.9.0-20_osxarm64_openblas 
+  liblzma            conda-forge/osx-arm64::liblzma-5.8.3-h8088a28_1 
+  libopenblas        conda-forge/osx-arm64::libopenblas-0.3.25-openmp_h6c19121_0 
+  libpng             conda-forge/osx-arm64::libpng-1.6.59-hf5e6511_0 
+  libsqlite          conda-forge/osx-arm64::libsqlite-3.54.1-h34a968b_101 
+  libtiff            conda-forge/osx-arm64::libtiff-4.7.2-hf67920b_1 
+  libwebp-base       conda-forge/osx-arm64::libwebp-base-1.6.0-h202fb40_1 
+  libxcb             conda-forge/osx-arm64::libxcb-1.17.0-hbffa61f_2 
+  libzlib            conda-forge/osx-arm64::libzlib-1.3.2-h8088a28_3 
+  llvm-openmp        conda-forge/osx-arm64::llvm-openmp-23.1.4-hdb3d66b_0 
+  matplotlib         conda-forge/osx-arm64::matplotlib-3.8.4-py39hdf13c20_2 
+  matplotlib-base    conda-forge/osx-arm64::matplotlib-base-3.8.4-py39h15359f4_2 
+  munkres            conda-forge/noarch::munkres-1.1.4-pyhd8ed1ab_1 
+  ncurses            conda-forge/osx-arm64::ncurses-6.6-he64c551_1 
+  numpy              conda-forge/osx-arm64::numpy-1.21.6-py39h690d673_0 
+  openjpeg           conda-forge/osx-arm64::openjpeg-2.5.4-h4d1e80c_2 
+  openssl            conda-forge/osx-arm64::openssl-3.6.5-h55eecbc_0 
+  packaging          conda-forge/noarch::packaging-26.3-pyhc364b38_0 
+  pandas             conda-forge/osx-arm64::pandas-1.5.3-py39hde7b980_1 
+  patsy              conda-forge/noarch::patsy-1.0.1-pyhd8ed1ab_1 
+  pillow             conda-forge/osx-arm64::pillow-11.3.0-py39hfea3036_0 
+  pip                conda-forge/noarch::pip-25.2-pyh8b19718_0 
+  platformdirs       conda-forge/noarch::platformdirs-4.3.8-pyhe01879c_0 
+  pooch              conda-forge/noarch::pooch-1.8.2-pyhd8ed1ab_3 
+  psutil             conda-forge/osx-arm64::psutil-7.0.0-py39hf3bc14e_0 
+  pthread-stubs      conda-forge/osx-arm64::pthread-stubs-0.4-hb001647_1004 
+  pycparser          conda-forge/noarch::pycparser-2.22-pyh29332c3_1 
+  pyparsing          conda-forge/noarch::pyparsing-3.2.3-pyhe01879c_2 
+  pysocks            conda-forge/noarch::pysocks-1.7.1-pyha55dd90_7 
+  python             conda-forge/osx-arm64::python-3.9.23-h7139b31_0_cpython 
+  python-dateutil    conda-forge/noarch::python-dateutil-2.9.0.post0-pyhe01879c_2 
+  python_abi         conda-forge/noarch::python_abi-3.9-9_cp39 
+  pytz               conda-forge/noarch::pytz-2025.2-pyhd8ed1ab_0 
+  readline           conda-forge/osx-arm64::readline-8.3-h8b90a29_1 
+  requests           conda-forge/noarch::requests-2.32.5-pyhd8ed1ab_0 
+  scikit-learn       conda-forge/osx-arm64::scikit-learn-1.6.1-py39h451895d_0 
+  scipy              conda-forge/osx-arm64::scipy-1.11.2-py39ha6b2cbd_0 
+  setuptools         conda-forge/noarch::setuptools-80.9.0-pyhff2d567_0 
+  six                conda-forge/noarch::six-1.17.0-pyhe01879c_1 
+  statsmodels        conda-forge/osx-arm64::statsmodels-0.14.2-py39h161d348_0 
+  threadpoolctl      conda-forge/noarch::threadpoolctl-3.6.0-pyhecae5ae_0 
+  tk                 conda-forge/osx-arm64::tk-8.6.13-hbeba79b_4 
+  tornado            conda-forge/osx-arm64::tornado-6.5.2-py39he7485ab_0 
+  tzdata             conda-forge/noarch::tzdata-2026e-h5d301ff_0 
+  unicodedata2       conda-forge/osx-arm64::unicodedata2-16.0.0-py39hf3bc14e_0 
+  urllib3            conda-forge/noarch::urllib3-2.5.0-pyhd8ed1ab_0 
+  wheel              conda-forge/noarch::wheel-0.45.1-pyhd8ed1ab_1 
+  xorg-libxau        conda-forge/osx-arm64::xorg-libxau-1.0.12-hb001647_2 
+  xorg-libxdmcp      conda-forge/osx-arm64::xorg-libxdmcp-1.1.5-hb001647_2 
+  zipp               conda-forge/noarch::zipp-3.23.0-pyhd8ed1ab_0 
+  zstandard          conda-forge/osx-arm64::zstandard-0.23.0-py39he7485ab_3 
+  zstd               conda-forge/osx-arm64::zstd-1.5.7-hf451053_7 
+
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+WARNING conda.conda_pypi.main:notify_externally_managed_future(156): 
+  Did you know? You can install many PyPI packages with conda
+  using the conda-pypi beta. Get started:
+    https://docs.conda.io/projects/conda/en/stable/new-features.html
+
+#
+# To activate this environment, use
+#
+#     $ conda activate timeeval
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+  WARNING: Connection timed out while downloading.
+  WARNING: Attempting to resume incomplete download (0 bytes/30 kB, attempt 1)
+Collecting torch==2.8.0
+  Downloading torch-2.8.0-cp39-none-macosx_11_0_arm64.whl.metadata (30 kB)
+  Downloading torch-2.8.0-cp39-none-macosx_11_0_arm64.whl.metadata (30 kB)
+Collecting numpyencoder==0.3.2
+  Downloading numpyencoder-0.3.2-py3-none-any.whl.metadata (1.1 kB)
+Collecting filelock (from torch==2.8.0)
+  Downloading filelock-3.19.1-py3-none-any.whl.metadata (2.1 kB)
+Collecting typing-extensions>=4.10.0 (from torch==2.8.0)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting sympy>=1.13.3 (from torch==2.8.0)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch==2.8.0)
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting jinja2 (from torch==2.8.0)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch==2.8.0)
+  Downloading fsspec-2025.10.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: numpy>=1.14.3 in ./.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages (from numpyencoder==0.3.2) (1.21.6)
+Requirement already satisfied: packaging>=20.0 in ./.localenv/miniforge/envs/timeeval/lib/python3.9/site-packages (from numpyencoder==0.3.2) (26.3)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.8.0)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.8.0)
+  Downloading markupsafe-3.0.4-cp39-cp39-macosx_11_0_arm64.whl.metadata (2.7 kB)
+Downloading torch-2.8.0-cp39-none-macosx_11_0_arm64.whl (73.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.6/73.6 MB 6.7 MB/s  0:00:10
+Downloading numpyencoder-0.3.2-py3-none-any.whl (3.5 kB)
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 5.9 MB/s  0:00:01
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 4.8 MB/s  0:00:00
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading filelock-3.19.1-py3-none-any.whl (15 kB)
+Downloading fsspec-2025.10.0-py3-none-any.whl (200 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.4-cp39-cp39-macosx_11_0_arm64.whl (12 kB)
+Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 5.7 MB/s  0:00:00
+Installing collected packages: mpmath, typing-extensions, sympy, numpyencoder, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+
+Successfully installed MarkupSafe-3.0.4 filelock-3.19.1 fsspec-2025.10.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.2.1 numpyencoder-0.3.2 sympy-1.14.0 torch-2.8.0 typing-extensions-4.16.0

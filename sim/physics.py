@@ -13,6 +13,7 @@ wheel motor torque limit (A2, A3, failure), magnetorquer axis health (A4).
 
 Twin mode: same timeline without physics faults; autonomous dumps replayed from the faulty run.
 """
+import bisect
 import json
 import os
 import time
@@ -265,7 +266,7 @@ class SatSim:
         return dcm_to_mrp(np.array([b1, b2, b3]))
 
     # ----------------------------------------------------------------- run
-    def run(self, out_dir, twin=False, replay=None, t_end=None, log=print):
+    def run(self, out_dir, twin=False, replay=None, t_end=None, log=print, follow=None):
         os.makedirs(out_dir, exist_ok=True)
         tl = self.tl
         T = float(t_end or tl.T)
@@ -273,6 +274,36 @@ class SatSim:
         if twin and replay:
             ev += [(a, "dump", dict(dur=b - a, auto=True)) for a, b in replay]
         ev.sort(key=lambda e: e[0])
+        known = 0
+
+        def sync(t):
+            """Twin in follow mode: run behind the faulty run instead of after it. It may enter a
+            day only once the faulty run is 2 days ahead, so every autonomous dump starting in that
+            day (<= 1 h long) is already recorded. Same events, same order as a replay."""
+            nonlocal known
+            need, last, seen = min(t + 2 * 86400.0, T), -1.0, time.time()
+            while True:
+                if os.path.exists(f"{follow}/physlog.json"):
+                    c = dict(t=T, auto=json.load(open(f"{follow}/physlog.json"))["auto_dumps"])
+                else:
+                    try:
+                        c = json.load(open(f"{follow}/clock.json"))
+                    except (OSError, ValueError):
+                        c = dict(t=0.0, auto=[])
+                if c["t"] >= need:
+                    break
+                if c["t"] != last:
+                    last, seen = c["t"], time.time()
+                elif time.time() - seen > 1800:
+                    raise RuntimeError(f"faulty run stalled at t={last}")
+                time.sleep(1.0)
+            for a, b in c["auto"][known:]:
+                assert a > t, (a, t)
+                ev.insert(bisect.bisect_right(ev, a, key=lambda e: e[0]), (a, "dump", dict(dur=b - a, auto=True)))
+            known = len(c["auto"])
+
+        if follow:
+            sync(0.0)
         ticks = np.arange(C.DT_TICK, T + 1e-6, C.DT_TICK)
         days = np.arange(86400.0, T + 1e-6, 86400.0)
         chunks = np.arange(CHUNK, T - 1e-6, CHUNK)
@@ -423,6 +454,13 @@ class SatSim:
                                  float(t < dump_until), float(dump_auto and t < dump_until)))
             if round(t, 3) in day_set or round(t, 3) in chunk_set:
                 flush()
+            if round(t, 3) in day_set:
+                if follow:
+                    sync(float(t))
+                elif not twin:                  # publish progress + dumps for a following twin
+                    with open(f"{out_dir}/clock.tmp", "w") as fh:
+                        json.dump(dict(t=float(t), auto=auto_dumps), fh)
+                    os.replace(f"{out_dir}/clock.tmp", f"{out_dir}/clock.json")
             if round(t, 3) in chunk_set:                # next 80-day piece from the exact end state
                 init = self.full_state()
                 self.t_off = float(t)

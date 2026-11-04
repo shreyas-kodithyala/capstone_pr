@@ -178,6 +178,7 @@ class Telemetry:
     # ------------------------------------------------------------ outages
     def str_outages(self, P, mods, skip_reset=None):
         """Star tracker invalid intervals: commanded resets, B4 faults, Sun in the 25 deg exclusion cone."""
+        self._b4 = {m["start"] for m in mods if m["code"] == "B4"}
         outs = [(r["start"], r["start"] + r["outage"]) for r in self.tl.rare
                 if r["key"] == "STR_RESET" and r["start"] != skip_reset]
         outs += [(m["start"], m["end"]) for m in mods if m["code"] == "B4"]
@@ -278,7 +279,10 @@ class Telemetry:
                 continue
             rr = np.random.default_rng(int(a) * 3 + axis + self.seed)
             dtv = t[i0:i1] - a
-            e[i0:i1] = rr.normal(0, 1e-5) * dtv + rr.normal(0, 2e-4) * np.sqrt(dtv / 60.0) * rr.standard_normal()
+            # uncommanded reboot (B4): the estimator also loses its bias estimate, so it free-runs on
+            # the full gyro bias (~0.2 deg/h class) instead of a calibrated residual
+            g = 6.0 if a in getattr(self, "_b4", ()) else 1.0
+            e[i0:i1] = g * (rr.normal(0, 1e-5) * dtv + rr.normal(0, 2e-4) * np.sqrt(dtv / 60.0) * rr.standard_normal())
         return e
 
     def _sensor_faults(self, out, mods, names):

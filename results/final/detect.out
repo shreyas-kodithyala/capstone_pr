@@ -1,0 +1,28 @@
+[    0.0 min] detection: solo
+[    0.0 min] detection: pers
+[    0.0 min] detection: fed
+[    0.9 min]   solo  SAT_1 local       val 0.930 | TEST F0.5 all 0.781 anom 0.000 | recall seen 0.0 unseen 0.0 | 0/6
+[    0.9 min]   solo  SAT_1 federated   val 0.930 | TEST F0.5 all 0.909 anom 0.833 | recall seen 1.0 unseen 0.4 | 3/6
+[    0.9 min]   fed   SAT_1 local       val 0.999 | TEST F0.5 all 0.833 anom 0.500 | recall seen 1.0 unseen 0.0 | 1/6
+[    0.9 min]   fed   SAT_1 federated   val 0.999 | TEST F0.5 all 0.795 anom 0.555 | recall seen 1.0 unseen 0.2 | 2/6
+[    1.0 min]   pers  SAT_1 local       val 0.999 | TEST F0.5 all 0.833 anom 0.682 | recall seen 1.0 unseen 0.4 | 3/6
+[    1.0 min]   pers  SAT_1 federated   val 0.998 | TEST F0.5 all 0.892 anom 0.832 | recall seen 1.0 unseen 0.8 | 5/6
+[    1.8 min]   fed   SAT_2 local       val 0.897 | TEST F0.5 all 0.878 anom 0.870 | recall seen 0.92 unseen 1.0 | 31/33
+[    1.8 min]   fed   SAT_2 federated   val 0.897 | TEST F0.5 all 0.878 anom 0.870 | recall seen 0.92 unseen 1.0 | 31/33
+[    1.8 min]   solo  SAT_2 local       val 0.896 | TEST F0.5 all 0.670 anom 0.636 | recall seen 0.84 unseen 0.625 | 26/33
+[    1.8 min]   solo  SAT_2 federated   val 0.896 | TEST F0.5 all 0.670 anom 0.636 | recall seen 0.84 unseen 0.625 | 26/33
+[    1.9 min]   fed   SAT_3 local       val 0.902 | TEST F0.5 all 0.736 anom 0.688 | recall seen 0.8333333333333334 unseen 1.0 | 14/15
+[    1.9 min]   fed   SAT_3 federated   val 0.714 | TEST F0.5 all 0.915 anom 0.882 | recall seen 0.3333333333333333 unseen 0.7777777777777778 | 9/15
+[    1.9 min]   solo  SAT_3 local       val 0.992 | TEST F0.5 all 0.776 anom 0.736 | recall seen 1.0 unseen 1.0 | 15/15
+[    1.9 min]   solo  SAT_3 federated   val 0.714 | TEST F0.5 all 0.774 anom 0.686 | recall seen 0.3333333333333333 unseen 0.5555555555555556 | 7/15
+[    1.9 min]   fed   SAT_4 local       val 0.878 | TEST F0.5 all 0.307 anom 0.073 | recall seen None unseen 0.6 | 3/5
+[    1.9 min]   fed   SAT_4 federated   val 0.747 | TEST F0.5 all 0.418 anom 0.082 | recall seen None unseen 0.4 | 2/5
+[    1.9 min]   solo  SAT_4 local       val 0.878 | TEST F0.5 all 0.788 anom 0.200 | recall seen None unseen 0.2 | 1/5
+[    1.9 min]   solo  SAT_4 federated   val 0.878 | TEST F0.5 all 0.788 anom 0.200 | recall seen None unseen 0.2 | 1/5
+[    2.0 min]   pers  SAT_2 local       val 0.895 | TEST F0.5 all 0.397 anom 0.365 | recall seen 0.96 unseen 0.875 | 31/33
+[    2.0 min]   pers  SAT_2 federated   val 0.896 | TEST F0.5 all 0.923 anom 0.919 | recall seen 0.92 unseen 0.875 | 30/33
+[    2.0 min]   pers  SAT_3 local       val 0.992 | TEST F0.5 all 0.705 anom 0.657 | recall seen 1.0 unseen 1.0 | 15/15
+[    2.0 min]   pers  SAT_3 federated   val 0.909 | TEST F0.5 all 0.845 anom 0.784 | recall seen 0.3333333333333333 unseen 0.6666666666666666 | 8/15
+[    2.1 min]   pers  SAT_4 local       val 0.879 | TEST F0.5 all 0.823 anom 0.238 | recall seen None unseen 0.2 | 1/5
+[    2.1 min]   pers  SAT_4 federated   val 0.879 | TEST F0.5 all 0.948 anom 0.555 | recall seen None unseen 0.2 | 1/5
+[    4.3 min] done

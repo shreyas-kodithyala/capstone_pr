@@ -1,0 +1,8 @@
+ID,Class,Subclass,Category,Dimensionality,Locality,Length
+id_1,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_2,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_3,rw_degradation,rw2,Anomaly,Multivariate,Global,Subsequence
+id_5,inertial_calibration,aocs,Rare Event,Multivariate,Global,Subsequence
+id_6,star_tracker_reset,star_tracker,Rare Event,Univariate,Local,Subsequence
+id_7,rw_failure,rw2,Anomaly,Multivariate,Global,Subsequence
+id_8,gyro_calibration,aocs,Rare Event,Multivariate,Global,Subsequence

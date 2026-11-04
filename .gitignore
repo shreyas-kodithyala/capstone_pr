@@ -11,3 +11,6 @@ sim/_VizFiles/*.bin
 __pycache__/
 .DS_Store
 !sim/esa_ref_catch22.npy
+
+# self-contained toolchain for a borrowed machine (conda envs, caches, temp)
+.localenv/

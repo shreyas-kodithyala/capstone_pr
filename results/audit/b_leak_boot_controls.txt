@@ -1,0 +1,34 @@
+generator code unchanged since final seeds: True
+SAT_1 train rows end 335374 early-stop rows end 394559 val window 394560 524160 test starts 524160 | mu/sd use rows < 394560
+SAT_2 train rows end 335374 early-stop rows end 394559 val window 394560 524160 test starts 524160 | mu/sd use rows < 394560
+SAT_3 train rows end 335374 early-stop rows end 394559 val window 394560 524160 test starts 524160 | mu/sd use rows < 394560
+SAT_4 train rows end 335374 early-stop rows end 394559 val window 394560 524160 test starts 524160 | mu/sd use rows < 394560
+model causality: max change in errors before the perturbed row 0.0 | first perturbed row change 16.451934814453125
+SAT_1 EW precision from counts 0.832 vs ESA metric 0.832
+SAT_2 EW precision from counts 0.921 vs ESA metric 0.921
+SAT_3 EW precision from counts 0.888 vs ESA metric 0.888
+SAT_4 EW precision from counts 0.999 vs ESA metric 0.999
+macro F0.5 solo [0.312, 0.393, 0.5]
+macro F0.5 fed [0.448, 0.594, 0.692]
+macro F0.5 pers [0.578, 0.765, 0.884]
+fed - solo macro F0.5 [0.03, 0.198, 0.336] P(gain>0) 0.989
+fed - solo false alarms [-7.0, 7.0, 22.0]
+pers - solo macro F0.5 [0.165, 0.353, 0.52] P(gain>0) 1.0
+pers - solo false alarms [-32.0, -21.0, -11.0]
+solo local dev [0.384, 0.318, 0.521, 0.556] final [0.0, 0.636, 0.736, 0.2]
+fed federated dev [0.664, 0.853, 0.594, 0.586] final [0.555, 0.87, 0.882, 0.082]
+pers federated dev [0.333, 0.856, 0.814, 0.555] final [0.832, 0.919, 0.784, 0.555]
+solo: reported local settings                [(0.0, 0, 0), (0.636, 26, 15), (0.736, 15, 6), (0.2, 1, 4)] mean 0.393 caught 42 FA 25
+solo: reported fleet settings                [(0.833, 3, 0), (0.636, 26, 15), (0.686, 7, 2), (0.2, 1, 4)] mean 0.589 caught 37 FA 21
+solo: no tuning (default k2)                 [(0.482, 6, 8), (0.282, 31, 81), (0.843, 12, 2), (0.122, 2, 17)] mean 0.432 caught 51 FA 108
+solo: no tuning, k3                          [(0.657, 5, 3), (0.276, 30, 82), (0.732, 11, 4), (0.475, 2, 2)] mean 0.535 caught 48 FA 91
+pers: reported local settings                [(0.682, 3, 1), (0.365, 31, 58), (0.657, 15, 9), (0.238, 1, 3)] mean 0.486 caught 50 FA 71
+pers: reported fleet settings                [(0.832, 5, 1), (0.919, 30, 2), (0.784, 8, 1), (0.555, 1, 0)] mean 0.773 caught 44 FA 4
+pers: no tuning (default k2)                 [(0.542, 5, 5), (0.263, 32, 92), (0.746, 13, 5), (0.16, 3, 19)] mean 0.428 caught 53 FA 121
+pers: no tuning, k3                          [(0.908, 4, 0), (0.365, 31, 58), (0.932, 11, 0), (0.344, 2, 4)] mean 0.637 caught 48 FA 62
+pers fleet, no command mask                  [(0.357, 1, 1), (0.469, 5, 0), (0.435, 2, 0), (0.556, 1, 0)] mean 0.454 caught 9 FA 1
+pers fleet, one absolute threshold a30       [(0.016, 6, 444), (0.838, 22, 2), (0.025, 9, 435), (0.031, 1, 38)] mean 0.228 caught 38 FA 919
+pers fleet, own ceilings                     [(0.832, 5, 1), (0.682, 30, 15), (0.952, 12, 0), (0.269, 2, 6)] mean 0.684 caught 49 FA 22
+LOSO settings {'SAT_1': ('k3', 'fleet', '1m'), 'SAT_2': ('k5', 'own', '1m'), 'SAT_3': ('k3', 'fleet', '1m'), 'SAT_4': ('k3', 'fleet', 'all')}
+pers leave-one-satellite-out selection       [(0.832, 5, 1), (0.903, 28, 2), (0.814, 7, 0), (0.555, 1, 0)] mean 0.776 caught 41 FA 3
+audit b rc=0

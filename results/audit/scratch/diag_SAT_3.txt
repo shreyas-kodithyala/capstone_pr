@@ -1,0 +1,20 @@
+##### SAT_3 solo
+[val] days 45: 10: FP 362 (241.3/30d) hit 3/3 | 20: FP 51 (34.0/30d) hit 3/3 | 30: FP 37 (24.7/30d) hit 2/3 | 50: FP 33 (22.0/30d) hit 1/3 | 80: FP 26 (17.3/30d) hit 1/3 | 120: FP 10 (6.7/30d) hit 1/3 | 200: FP 0 (0.0/30d) hit 0/3
+   FP@30 channels {'gyro_x': 23, 'bus_load': 10, 'gyro_y': 2, 'rw4_current': 1, 'att_err': 1}
+   FP@30 last cmd {'SLEW_TARGET': 21, 'TX_ON': 9, 'PAYLOAD_ON': 7}; median min since cmd 0; within 20min 100%; median dur 20 min
+[test] days 183: 10: FP 1485 (243.4/30d) hit 13/15 | 20: FP 214 (35.1/30d) hit 8/15 | 30: FP 152 (24.9/30d) hit 8/15 | 50: FP 131 (21.5/30d) hit 7/15 | 80: FP 102 (16.7/30d) hit 5/15 | 120: FP 41 (6.7/30d) hit 4/15 | 200: FP 1 (0.2/30d) hit 1/15
+   FP@30 channels {'gyro_x': 71, 'bus_load': 25, 'att_err': 14, 'rw2_speed': 11, 'gyro_y': 7, 'rw1_speed': 6}
+   FP@30 last cmd {'SLEW_TARGET': 71, 'PAYLOAD_ON': 33, 'PAYLOAD_OFF': 25, 'TX_ON': 16, 'TX_OFF': 5, 'MTQ_DUMP': 2}; median min since cmd 0; within 20min 83%; median dur 19 min
+           n   hrs  zlab_min  zlab_med  zlab_max           ch
+per  code                                                    
+test A1    2   1.3      15.2      41.0      66.8  rw2_current
+     A2    2   0.0       0.2      14.5      28.7  rw1_current
+     B1    2   8.6      67.9     117.9     168.0       gyro_x
+     B2    1   0.1    1180.0    1180.0    1180.0       gyro_x
+     B4    2   0.4       4.0      10.8      17.6      att_err
+     C1    2  14.7       7.2      11.1      15.0  bat_voltage
+     C3    2   2.1      25.8      35.2      44.5     bus_load
+     D1    2  10.4     129.4     139.6     149.8     bat_temp
+val  C1    1  15.3      14.1      14.1      14.1  bat_voltage
+     C3    1   1.9      31.6      31.6      31.6     bus_load
+     D1    1   7.7     132.9     132.9     132.9     bat_temp

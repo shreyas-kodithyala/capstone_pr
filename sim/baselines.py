@@ -38,6 +38,8 @@ def score(raw, ts, P, chs, sel):
     y = lab[lab["Channel"].isin(chs)].reset_index(drop=True)
     if not y.Category.isin(sel["Category"]).any():
         return {}
+    if not P.any():                         # no alarms: ESA's code cannot take an empty list
+        return {f"global_{k}": 0.0 for k in ("EW_F_0.50", "EW_precision", "EW_recall", "alarming_precision", "AFF_F_0.50")}
     out = {}
     with contextlib.redirect_stdout(io.StringIO()):
         for k, v in ESAScores(betas=BETA, select_labels=sel).score(y.drop(columns=["Channel"]), series(ts, P.max(1))).items():

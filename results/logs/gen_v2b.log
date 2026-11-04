@@ -1,0 +1,47 @@
+start 13:05:00
+WARNING: code changed since the seeds were frozen (fleet.json). Continuing with the recorded seeds.
+[   0.0 min] satellites ['SAT_1', 'SAT_2', 'SAT_3', 'SAT_4', 'ARC_1', 'ARC_2', 'ARC_3']; twins ['ARC_1', 'ARC_2', 'ARC_3', 'SAT_1', 'SAT_2', 'SAT_3', 'SAT_4']; physics workers 14
+[   1.0 min] progress  | free mem 31.6 GB
+[   2.0 min] progress  | free mem 31.1 GB
+[   3.0 min] progress  | free mem 31.8 GB
+[   4.0 min] progress  | free mem 31.2 GB
+[   5.0 min] progress SAT_1:80/365 SAT_1-t:80/365 SAT_2:80/365 SAT_2-t:80/365 SAT_3:80/365 SAT_3-t:80/365 SAT_4:80/365 SAT_4-t:80/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 31.8 GB
+[   6.0 min] progress SAT_1:80/365 SAT_1-t:80/365 SAT_2:80/365 SAT_2-t:80/365 SAT_3:80/365 SAT_3-t:80/365 SAT_4:80/365 SAT_4-t:80/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 31.1 GB
+[   7.0 min] progress SAT_1:80/365 SAT_1-t:80/365 SAT_2:80/365 SAT_2-t:80/365 SAT_3:80/365 SAT_3-t:80/365 SAT_4:80/365 SAT_4-t:80/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 31.2 GB
+[   8.0 min] progress SAT_1:80/365 SAT_1-t:80/365 SAT_2:80/365 SAT_2-t:80/365 SAT_3:80/365 SAT_3-t:80/365 SAT_4:80/365 SAT_4-t:80/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 30.9 GB
+[   9.0 min] progress SAT_1:80/365 SAT_1-t:80/365 SAT_2:80/365 SAT_2-t:80/365 SAT_3:80/365 SAT_3-t:80/365 SAT_4:80/365 SAT_4-t:80/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 31.6 GB
+[   9.3 min] phys ARC_3 finished
+[   9.3 min] phys ARC_1 finished
+[   9.4 min] phys ARC_2 finished
+[   9.5 min] twin ARC_1 finished
+[   9.5 min] twin ARC_2 finished
+[   9.5 min] twin ARC_3 finished
+[  10.5 min] progress SAT_1:160/365 SAT_1-t:160/365 SAT_2:160/365 SAT_2-t:160/365 SAT_3:160/365 SAT_3-t:160/365 SAT_4:160/365 SAT_4-t:160/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 30.4 GB
+[  11.0 min] products ARC_2 finished
+[  11.0 min] products ARC_1 finished
+[  11.1 min] products ARC_3 finished
+[  12.1 min] progress SAT_1:160/365 SAT_1-t:160/365 SAT_2:160/365 SAT_2-t:160/365 SAT_3:160/365 SAT_3-t:160/365 SAT_4:160/365 SAT_4-t:160/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 30.2 GB
+[  13.1 min] progress SAT_1:160/365 SAT_1-t:160/365 SAT_2:160/365 SAT_2-t:160/365 SAT_3:160/365 SAT_3-t:160/365 SAT_4:160/365 SAT_4-t:160/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 29.6 GB
+[  14.1 min] progress SAT_1:160/365 SAT_1-t:160/365 SAT_2:160/365 SAT_2-t:160/365 SAT_3:160/365 SAT_3-t:160/365 SAT_4:160/365 SAT_4-t:160/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 31.1 GB
+[  15.1 min] progress SAT_1:240/365 SAT_1-t:240/365 SAT_2:240/365 SAT_2-t:240/365 SAT_3:240/365 SAT_3-t:240/365 SAT_4:240/365 SAT_4-t:240/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 30.3 GB
+[  16.1 min] progress SAT_1:240/365 SAT_1-t:240/365 SAT_2:240/365 SAT_2-t:240/365 SAT_3:240/365 SAT_3-t:240/365 SAT_4:240/365 SAT_4-t:240/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 30.1 GB
+[  17.1 min] progress SAT_1:240/365 SAT_1-t:240/365 SAT_2:240/365 SAT_2-t:240/365 SAT_3:240/365 SAT_3-t:240/365 SAT_4:240/365 SAT_4-t:240/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 30.2 GB
+[  18.1 min] progress SAT_1:240/365 SAT_1-t:240/365 SAT_2:240/365 SAT_2-t:240/365 SAT_3:240/365 SAT_3-t:240/365 SAT_4:240/365 SAT_4-t:240/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 30.3 GB
+[  19.1 min] progress SAT_1:320/365 SAT_1-t:320/365 SAT_2:320/365 SAT_2-t:320/365 SAT_3:320/365 SAT_3-t:320/365 SAT_4:320/365 SAT_4-t:320/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 30.8 GB
+[  20.1 min] progress SAT_1:320/365 SAT_1-t:320/365 SAT_2:320/365 SAT_2-t:320/365 SAT_3:320/365 SAT_3-t:320/365 SAT_4:320/365 SAT_4-t:320/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 31.1 GB
+[  21.0 min] phys SAT_1 finished
+[  21.0 min] phys SAT_3 finished
+[  21.0 min] phys SAT_2 finished
+[  21.1 min] twin SAT_3 finished
+[  21.1 min] phys SAT_4 finished
+[  21.1 min] twin SAT_2 finished
+[  21.2 min] twin SAT_4 finished
+[  21.3 min] twin SAT_1 finished
+[  22.3 min] progress SAT_1:320/365 SAT_1-t:320/365 SAT_2:320/365 SAT_2-t:320/365 SAT_3:320/365 SAT_3-t:320/365 SAT_4:320/365 SAT_4-t:320/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 28.9 GB
+[  23.3 min] progress SAT_1:320/365 SAT_1-t:320/365 SAT_2:320/365 SAT_2-t:320/365 SAT_3:320/365 SAT_3-t:320/365 SAT_4:320/365 SAT_4-t:320/365 ARC_1:80/150 ARC_1-t:80/150 ARC_2:80/150 ARC_2-t:80/150 ARC_3:80/150 ARC_3-t:80/150 | free mem 28.7 GB
+[  23.7 min] products SAT_2 finished
+[  24.1 min] products SAT_1 finished
+[  24.1 min] products SAT_4 finished
+[  24.5 min] products SAT_3 finished
+[  24.5 min] all done
+end 13:29:32 rc=0

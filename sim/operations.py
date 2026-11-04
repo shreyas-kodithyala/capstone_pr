@@ -268,11 +268,11 @@ class Timeline:
         if c == "B4":
             f["component"] = "star_tracker"
         if c == "C1":
-            f["component"] = "solar_array"; f["strings"] = int(rng.choice([1, 1, 2]))
+            f["component"] = "solar_array"; f["strings"] = int(rng.choice([2, 2, 3]))
         if c == "C2":
             f["component"] = "battery"; f["factor"] = float(rng.uniform(2.5, 4.0))
         if c == "C3":
-            f["component"] = "power_bus"; f["watts"] = float(rng.uniform(50, 90))
+            f["component"] = "power_bus"; f["watts"] = float(rng.uniform(90, 160))
         if c == "C4":
             f["component"] = "payload"
         if c == "D1":
