@@ -10,3 +10,4 @@ sim/_VizFiles/*.bin
 *.csv.gz
 __pycache__/
 .DS_Store
+!sim/esa_ref_catch22.npy

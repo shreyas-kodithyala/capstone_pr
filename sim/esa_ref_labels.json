@@ -1,0 +1,45 @@
+{
+ "source": "ESA-ADB labels.csv + anomaly_types.csv, lightweight channels, over the labelled span",
+ "M1": {
+  "channels": "41-46",
+  "labelled_span_years": 13.78,
+  "events": {
+   "Rare Event": 63,
+   "Anomaly": 51,
+   "Communication Gap": 4
+  },
+  "events_per_year": {
+   "Rare Event": 4.6,
+   "Anomaly": 3.7,
+   "Communication Gap": 0.3
+  },
+  "pct_time_anomaly": 0.768,
+  "pct_time_rare": 0.777,
+  "anomaly_type_mix": {
+   "Multivariate-Global": 0.941,
+   "Multivariate-Local": 0.039,
+   "Univariate-Local": 0.02
+  },
+  "anomaly_point_frac": 0.216
+ },
+ "M2": {
+  "channels": "18-28",
+  "labelled_span_years": 3.49,
+  "events": {
+   "Rare Event": 603,
+   "Anomaly": 19
+  },
+  "events_per_year": {
+   "Rare Event": 172.6,
+   "Anomaly": 5.4
+  },
+  "pct_time_anomaly": 1.573,
+  "pct_time_rare": 3.249,
+  "anomaly_type_mix": {
+   "Multivariate-Global": 0.474,
+   "Multivariate-Local": 0.474,
+   "Univariate-Local": 0.053
+  },
+  "anomaly_point_frac": 0.0
+ }
+}

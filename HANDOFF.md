@@ -256,6 +256,12 @@ selection:
   - `data/`: the dataset (1.2 GB), regenerated from the seeds;
   - `fed/out_*`: models, errors, results;
   - `*.npy`, `*.pt`, `*.pkl`, Vizard `.bin` files.
+- **ESA reference statistics are in git, so no ESA data is needed on a new machine:**
+  - `sim/esa_ref_catch22.npy`: catch22 features of the same 253 real 1-day windows (M1+M2 lightweight,
+    seed 0). `validate.py` uses it when the ESA arrays are absent.
+  - `sim/esa_ref_labels.json`: ESA label statistics for the lightweight channels.
+    - **M1:** 0.77 % anomalous time, 3.7 anomalies/yr, 4.6 rare/yr, 94 % multivariate-global.
+    - **M2:** 1.57 %, 5.4/yr, 173 rare/yr, 47 % multivariate-global / 47 % multivariate-local.
 - **ESA-ADB data is not needed** for the fleet work.
   - The only use is the catch22 similarity check in `validate.py`, which is skipped if
     `ext/new_runs/data/M1_train_vals.npy` is missing.

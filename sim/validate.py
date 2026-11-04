@@ -177,14 +177,20 @@ def catch22_compare(fleet_dfs, n_win=150, win=2880, seed=0):
             return None
         return pycatch22.catch22_all(x.tolist())["values"]
 
-    real = []
-    for mk in ("M1", "M2"):
-        V = np.load(f"{ESA_DATA}/{mk}_train_vals.npy", mmap_mode="r")
-        for _ in range(n_win):
-            c = rng.integers(V.shape[1]); i = rng.integers(0, V.shape[0] - win)
-            f = feats(V[i:i + win, c])
-            if f is not None:
-                real.append(f)
+    ref = os.path.join(HERE, "esa_ref_catch22.npy")   # catch22 features of the real windows (no ESA data needed)
+    if os.path.exists(ref) and not os.path.exists(f"{ESA_DATA}/M1_train_vals.npy"):
+        real = list(np.load(ref))
+    else:
+        real = []
+        for mk in ("M1", "M2"):
+            V = np.load(f"{ESA_DATA}/{mk}_train_vals.npy", mmap_mode="r")
+            for _ in range(n_win):
+                c = rng.integers(V.shape[1]); i = rng.integers(0, V.shape[0] - win)
+                f = feats(V[i:i + win, c])
+                if f is not None:
+                    real.append(f)
+        np.save(ref, np.array(real))
+    rng = np.random.default_rng(seed + 1)       # fleet windows drawn independently of the real ones
     ours = []
     tg = [CHID[n] for n in C.CH_NAMES if dict((c[0], c[5]) for c in C.CHANNELS)[n]]
     per_sat = max(1, n_win * 2 // len(fleet_dfs))
@@ -241,7 +247,7 @@ def main():
         rep["stats"][sat] = dataset_stats(sat, df)
         print(sat, json.dumps(r)[:300])
         dfs.append(df)
-    if os.path.exists(f"{ESA_DATA}/M1_train_vals.npy"):
+    if os.path.exists(f"{ESA_DATA}/M1_train_vals.npy") or os.path.exists(os.path.join(HERE, "esa_ref_catch22.npy")):
         rep["R2_catch22"] = catch22_compare(dfs)
     else:                                   # ESA arrays not on this machine (not in git)
         rep["R2_catch22"] = dict(skipped=f"{ESA_DATA}/M1_train_vals.npy not found")
