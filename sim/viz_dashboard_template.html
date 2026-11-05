@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission Replay</title>
+<style>
+:root{color-scheme:light;
+--page:#f9f9f7;--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#6e6c66;--grid:#e1e0d9;--axis:#c3c2b7;--ring:rgba(11,11,11,.10);
+--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--good:#0ca30c;--warn:#fab219;--serious:#ec835a;--crit:#d03b3b;--wash:#f0efec}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){color-scheme:dark;
+--page:#0d0d0d;--surface:#1a1a19;--ink:#f0efec;--ink2:#c3c2b7;--muted:#a3a198;--grid:#2c2c2a;--axis:#383835;--ring:rgba(255,255,255,.10);
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--wash:#383835}}
+:root[data-theme="dark"]{color-scheme:dark;
+--page:#0d0d0d;--surface:#1a1a19;--ink:#f0efec;--ink2:#c3c2b7;--muted:#a3a198;--grid:#2c2c2a;--axis:#383835;--ring:rgba(255,255,255,.10);
+--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--wash:#383835}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1320px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:0}h2{font-size:14px;margin:0 0 2px;font-weight:650}
+.sub{color:var(--ink2);font-size:12px;margin:0 0 10px}
+header{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+.clock{font-size:26px;font-weight:650}.date{color:var(--ink2)}
+.bar{position:sticky;top:0;z-index:5;background:var(--page);padding:8px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+button,select{max-width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--axis);border-radius:6px;padding:6px 10px;min-height:34px}
+button{cursor:pointer}button.primary{background:var(--s1);border-color:var(--s1);color:#fff;font-weight:600;min-width:84px}
+input[type=range]{flex:1;min-width:200px;accent-color:var(--s1)}
+.phase{font-size:12px;color:var(--ink2);min-width:230px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:8px 0}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:12px;min-width:0}
+.sat{display:flex;align-items:center;gap:8px;font-weight:650}.dot{width:10px;height:10px;border-radius:50%;flex:none}
+.role{color:var(--muted);font-size:12px;font-weight:400;margin-left:auto}
+.chip{display:inline-flex;gap:6px;align-items:center;margin:8px 0 4px;font-weight:600;font-size:13px}
+.chip i{font-style:normal;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;color:#fff;font-size:12px}
+.note{min-height:38px;color:var(--ink2);font-size:12px}
+.kv{display:grid;grid-template-columns:1fr auto;gap:1px 8px;font-size:12px;margin-top:6px;border-top:1px solid var(--grid);padding-top:6px}
+.kv b{font-weight:500;font-variant-numeric:tabular-nums}.kv span{color:var(--ink2)}
+.cmd{margin-top:6px;font-size:12px;color:var(--ink2);min-height:18px}.cmd b{color:var(--ink);font-weight:600}
+.two{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:10px;margin:10px 0}
+svg{display:block;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ink2);margin-top:6px}
+.legend span{display:inline-flex;gap:5px;align-items:center}.sw{width:10px;height:10px;border-radius:2px;display:inline-block}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
+.feed{list-style:none;margin:0;padding:0;font-size:12px;height:292px;overflow:auto}
+.feed li{display:flex;gap:8px;padding:3px 0;border-bottom:1px solid var(--grid);align-items:center}
+.feed time{color:var(--muted);font-variant-numeric:tabular-nums;flex:none;width:70px}
+.tablewrap{max-height:340px;overflow:auto;border-top:1px solid var(--grid)}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th{position:sticky;top:0;background:var(--surface);text-align:left;color:var(--ink2);font-weight:600}
+th,td{padding:4px 8px 4px 0;border-bottom:1px solid var(--grid);white-space:nowrap}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.yes{color:var(--ink)}.no{color:var(--muted)}
+tr.cur td{background:var(--wash)}
+#tip{position:fixed;z-index:9;pointer-events:none;background:var(--surface);border:1px solid var(--axis);border-radius:6px;padding:6px 8px;font-size:12px;max-width:300px;display:none;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+footer{color:var(--ink2);font-size:12px;margin:14px 0 24px}
+footer ul{margin:4px 0;padding-left:18px}
+@media (max-width:900px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.grid4{grid-template-columns:minmax(0,1fr)}.phase{min-width:0}.bar{position:static}.bar label{max-width:100%;min-width:0}#jump{width:100%}input[type=range]{min-width:100%}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div><h1>Mission Replay</h1><p class="sub" style="margin:2px 0 0">Final simulated fleet: 4 satellites, 365 days, played from the saved data. Nothing here is simulated again.</p></div>
+  <div><span class="clock" id="clock">Day 0.00</span> <span class="date" id="date"></span></div>
+</header>
+<div class="bar">
+  <button class="primary" id="play" aria-label="Play or pause">Play</button>
+  <label>Speed <select id="speed" aria-label="Playback speed">
+    <option value="0.25">6 hours per second</option><option value="1" selected>1 day per second</option><option value="5">5 days per second</option><option value="20">20 days per second</option></select></label>
+  <input id="slider" type="range" min="0" max="365" step="0.01" value="0" aria-label="Mission day">
+  <span class="phase" id="phase"></span>
+  <label>Jump to <select id="jump" aria-label="Jump to a key moment"></select></label>
+</div>
+<section class="grid4" id="cards" aria-label="Satellite status"></section>
+<section class="card" style="margin-top:10px">
+  <h2>Whole mission timeline</h2>
+  <p class="sub">Every labelled event, by satellite. Click anywhere to jump.</p>
+  <div id="timeline"></div>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--crit)"></i>Anomaly</span>
+    <span><i class="sw" style="background:var(--warn)"></i>Rare event</span>
+    <span><i class="sw" style="background:var(--serious)"></i>Degradation</span>
+    <span><i class="sw" style="background:var(--ink)"></i>Failed</span>
+  </div>
+</section>
+<div class="two">
+  <section class="card">
+    <h2 id="tt">Telemetry</h2>
+    <p class="sub">Line is the 3-hour average. Shaded band is the lowest to highest 30-second value in those 3 hours.</p>
+    <div class="row">
+      <select id="tsat" aria-label="Satellite"></select>
+      <select id="tch" aria-label="Channel"></select>
+    </div>
+    <div id="tele"></div>
+  </section>
+  <section class="card">
+    <h2>Live telecommands</h2>
+    <p class="sub"><span id="ccount"></span></p>
+    <div class="row"><select id="csat" aria-label="Filter commands by satellite"></select></div>
+    <ul class="feed" id="feed" aria-live="off"></ul>
+  </section>
+</div>
+<div class="two">
+  <section class="card">
+    <h2>Events so far</h2>
+    <p class="sub">Test faults show whether each arm caught them, using the stored final results. Training events were not scored.</p>
+    <div class="row"><select id="efilter" aria-label="Filter events"><option value="a">Anomalies only</option><option value="all">Anomalies and rare events</option></select></div>
+    <div class="tablewrap"><table id="events"><thead><tr><th>Day</th><th>Satellite</th><th>Event</th><th>Part</th><th>Solo</th><th>Plain FL</th><th>FL + pers</th></tr></thead><tbody></tbody></table></div>
+  </section>
+  <section class="card">
+    <h2>Wheel life on SAT_2</h2>
+    <p class="sub">Remaining life in days. The first alert is on day 256 and the exponential prediction starts on day 279.</p>
+    <div id="rul"></div>
+    <div class="legend"><span><i class="sw" style="background:var(--s1)"></i>True</span><span><i class="sw" style="background:var(--s2)"></i>Predicted</span></div>
+    <h2 style="margin-top:12px">Final test scores</h2>
+    <div style="overflow-x:auto"><div style="overflow-x:auto"><div style="overflow-x:auto"><table id="score"><thead><tr><th>Arm and settings</th><th class="n">Caught</th><th class="n">False alarms</th><th class="n">F0.5 all</th></tr></thead><tbody></tbody></table></div>
+  </section>
+</div>
+<footer>
+  <b>What this page shows</b>
+  <ul>
+    <li>Labels are the simulator's ground truth, shown for the replay only. They were never model input.</li>
+    <li>Training and FL ran offline after the data existed, not live in orbit. FL used days 0 to 137 only, before wear began on day 190.</li>
+    <li>False alarms are final totals. Their times were not stored, so they are not on the timeline.</li>
+    <li>One seed, one simulated fleet. Fleet settings conflict with the per-satellite settings rule; see the report.</li>
+  </ul>
+</footer>
+</main>
+<div id="tip" role="status"></div>
+<script id="data" type="application/json">/*DATA*/</script>
+<script>
+const D=JSON.parse(document.getElementById('data').textContent);
+const $=s=>document.querySelector(s), DAYS=365, S=D.sats, COL=['var(--s1)','var(--s2)','var(--s3)','var(--s4)'];
+const NS='http://www.w3.org/2000/svg';
+const el=(n,a={},p)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
+const fmtDate=d=>new Date(Date.UTC(2025,0,1)+d*864e5).toISOString().slice(0,16).replace('T',' ')+' UTC';
+const nice=x=>{const a=Math.abs(x);return a>=1000?x.toFixed(0):a>=10?x.toFixed(1):a>=1?x.toFixed(2):a>=.01?x.toFixed(3):x.toFixed(5)};
+let day=0,playing=false,last=0;
+const tip=$('#tip');
+function showTip(e,h){tip.innerHTML=h;tip.style.display='block';const r=tip.getBoundingClientRect();
+  tip.style.left=Math.max(8,Math.min(innerWidth-r.width-8,e.clientX+12))+'px';tip.style.top=Math.max(8,e.clientY-r.height-10)+'px'}
+const hideTip=()=>tip.style.display='none';
+function phase(d){return d<116.4?'Weight-training data (days 0 to 116.4)':d<137?'Round choice and early stopping (days 116.4 to 137)':d<182?'Detector settings chosen (days 137 to 182)':'Frozen test, scored once (days 182 to 365)'}
+
+// satellite cards
+const STAT={ok:['Nominal','✓','var(--good)'],rare:['Rare event','!','var(--warn)'],anom:['Anomaly','▲','var(--crit)'],deg:['Degrading','▲','var(--serious)'],fail:['Wheel failed','✕','var(--crit)']};
+S.forEach((s,i)=>{const c=document.createElement('article');c.className='card';c.innerHTML=
+ `<div class="sat"><span class="dot" style="background:${COL[i]}"></span>${s}<span class="role">${D.roles[i]}</span></div>
+  <div class="chip" id="chip${i}"></div><div class="note" id="note${i}"></div>
+  <div class="cmd" id="cmd${i}"></div><div class="kv" id="kv${i}"></div>`;$('#cards').appendChild(c)});
+function bisect(a,x){let l=0,h=a.length;while(l<h){const m=(l+h)>>1;a[m]<=x?l=m+1:h=m}return l}
+function updateCards(){
+ const bin=Math.min(D.nb-1,Math.floor(day*8));
+ S.forEach((s,i)=>{
+  const act=D.events.filter(e=>e.s===i&&e.a<=day&&day<=e.b);
+  let st='ok';
+  if(act.some(e=>e.cat==='R'))st='rare';
+  if(act.some(e=>e.cat==='A'))st='anom';
+  if(act.some(e=>e.code==='W2'))st='deg';
+  if(act.some(e=>e.code==='W3'))st='fail';
+  const [t,ic,c]=STAT[st];
+  $('#chip'+i).innerHTML=`<i style="background:${c}">${ic}</i>${t}`;
+  let n=act.filter(e=>e.code!=='W2'&&e.code!=='W3').map(e=>e.name+(e.comp?' on '+e.comp:'')).join('; ');
+  if(act.some(e=>e.code==='W3'))n='Wheel 2 lost. Controlling attitude with 3 wheels.'+(n?' '+n:'');
+  else if(act.some(e=>e.code==='W2'))n='Wheel 2 friction rising.'+(n?' '+n:'');
+  else if(!n&&i===1&&day>=190)n='Hidden wear on wheel 2. Not yet visible in telemetry.';
+  $('#note'+i).textContent=n||'Routine operations.';
+  const k=bisect(D.cmdT[i],day*86400)-1;
+  $('#cmd'+i).innerHTML=k>=0?`Last command: <b>${D.cmdNames[D.cmdC[i][k]]}</b>`:'No commands yet';
+  $('#kv'+i).innerHTML=D.card.map(ch=>{const j=D.ch.indexOf(ch.n);return `<span>${ch.l}</span><b>${nice(D.tel[i][j][0][bin])} ${ch.u}</b>`}).join('');
+ })}
+
+// timeline
+const TW=1200,TL=70,TR=12,RH=30,TH=RH*4+34,tx=d=>TL+d/DAYS*(TW-TL-TR);
+const tsvg=el('svg',{viewBox:`0 0 ${TW} ${TH}`,role:'img','aria-label':'Mission timeline of events for all four satellites'},$('#timeline'));
+[[0,116.4,'Training'],[116.4,137,'Rounds'],[137,182,'Settings'],[182,365,'Frozen test']].forEach(([a,b,t],i)=>{
+ el('rect',{x:tx(a),y:0,width:tx(b)-tx(a)-2,height:14,rx:3,fill:'var(--wash)'},tsvg);
+ const x=el('text',{x:tx(a)+5,y:11,'font-size':10,fill:'var(--ink2)'},tsvg);x.textContent=t});
+S.forEach((s,i)=>{const y=20+i*RH;
+ const l=el('text',{x:0,y:y+15,'font-size':12,fill:'var(--ink)'},tsvg);l.textContent=s;
+ el('line',{x1:TL,x2:TW-TR,y1:y+RH-5,y2:y+RH-5,stroke:'var(--grid)'},tsvg)});
+D.events.forEach(e=>{const y=22+e.s*RH,x=tx(e.a),w=Math.max(2,tx(e.b)-x);
+ const c=e.code==='W3'?'var(--ink)':e.code==='W2'?'var(--serious)':e.cat==='A'?'var(--crit)':'var(--warn)';
+ const h=e.code==='W2'||e.code==='W3'?20:e.cat==='A'?20:11, yy=e.cat==='A'||e.code[0]==='W'?y:y+9;
+ const r=el('rect',{x,y:yy,width:w,height:h,rx:1,fill:c},tsvg);
+ const hit=el('rect',{x:x-3,y:y-2,width:w+6,height:RH-2,fill:'transparent'},tsvg);
+ hit.addEventListener('mousemove',ev=>showTip(ev,`<b>${S[e.s]}: ${e.name}</b><br>Day ${e.a.toFixed(2)}${e.comp?' on '+e.comp:''}`));
+ hit.addEventListener('mouseleave',hideTip)});
+for(let d=0;d<=360;d+=60){const t=el('text',{x:tx(d),y:TH-3,'font-size':10,fill:'var(--muted)','text-anchor':'middle'},tsvg);t.textContent='Day '+d}
+const tcur=el('line',{x1:tx(0),x2:tx(0),y1:0,y2:TH-14,stroke:'var(--ink)','stroke-width':1.5},tsvg);
+tsvg.addEventListener('click',ev=>{const b=tsvg.getBoundingClientRect();setDay(Math.max(0,Math.min(DAYS,((ev.clientX-b.left)/b.width*TW-TL)/(TW-TL-TR)*DAYS)))});
+
+// telemetry chart
+const CW=820,CH=280,CL=62,CR=10,CT=8,CB=24;
+const csvg=el('svg',{viewBox:`0 0 ${CW} ${CH}`,role:'img','aria-label':'Telemetry over the year'},$('#tele'));
+const gridG=el('g',{},csvg),band=el('path',{opacity:.28},csvg),line=el('path',{fill:'none','stroke-width':1.5},csvg),cc=el('line',{y1:CT,y2:CH-CB,stroke:'var(--ink)','stroke-width':1.5},csvg);
+S.forEach((s,i)=>{$('#tsat').add(new Option(s,i));});
+D.chName.forEach((n,j)=>$('#tch').add(new Option(n,j)));
+$('#tsat').value=1;$('#tch').value=D.ch.indexOf('rw2_current');
+const cx=d=>CL+d/DAYS*(CW-CL-CR);let cy=v=>0;
+function drawTele(){const i=+$('#tsat').value,j=+$('#tch').value,[m,lo,hi]=D.tel[i][j];
+ let a=Infinity,b=-Infinity;for(let k=0;k<D.nb;k++){if(lo[k]<a)a=lo[k];if(hi[k]>b)b=hi[k]}
+ if(a===b){a-=1;b+=1}const pad=(b-a)*.05;a-=pad;b+=pad;
+ cy=v=>CT+(b-v)/(b-a)*(CH-CT-CB);
+ gridG.replaceChildren();
+ for(let q=0;q<=4;q++){const v=a+(b-a)*q/4,y=cy(v);el('line',{x1:CL,x2:CW-CR,y1:y,y2:y,stroke:'var(--grid)'},gridG);
+  const t=el('text',{x:CL-6,y:y+3,'font-size':10,'text-anchor':'end',fill:'var(--muted)'},gridG);t.textContent=nice(v)}
+ for(let d=0;d<=360;d+=60){const t=el('text',{x:cx(d),y:CH-8,'font-size':10,'text-anchor':'middle',fill:'var(--muted)'},gridG);t.textContent='Day '+d}
+ let p='',up='',dn='';
+ for(let k=0;k<D.nb;k++){const x=cx((k+.5)/8).toFixed(1);p+=(k?'L':'M')+x+' '+cy(m[k]).toFixed(1);up+=(k?'L':'M')+x+' '+cy(hi[k]).toFixed(1);dn='L'+x+' '+cy(lo[k]).toFixed(1)+dn}
+ line.setAttribute('d',p);line.setAttribute('stroke',COL[i]);band.setAttribute('d',up+dn+'Z');band.setAttribute('fill',COL[i]);
+ $('#tt').textContent=`Telemetry: ${S[i]} ${D.chName[j]}`}
+csvg.addEventListener('mousemove',ev=>{const b=csvg.getBoundingClientRect(),d=((ev.clientX-b.left)/b.width*CW-CL)/(CW-CL-CR)*DAYS;if(d<0||d>DAYS)return hideTip();
+ const k=Math.min(D.nb-1,Math.max(0,Math.floor(d*8))),i=+$('#tsat').value,j=+$('#tch').value,[m,lo,hi]=D.tel[i][j];
+ showTip(ev,`<b>Day ${d.toFixed(1)}</b><br>Average ${nice(m[k])}<br>Low ${nice(lo[k])}, high ${nice(hi[k])}`)});
+csvg.addEventListener('mouseleave',hideTip);
+$('#tsat').onchange=$('#tch').onchange=()=>{drawTele();updateCursor()};
+
+// RUL chart
+const RW=420,RHt=190,RL=46,RR=10,RT=8,RB=24;
+const rsvg=el('svg',{viewBox:`0 0 ${RW} ${RHt}`,role:'img','aria-label':'True and predicted remaining wheel life'},$('#rul'));
+const RM=Math.ceil(Math.max(...D.rul.map(r=>Math.max(r[1],r[2]??0)))/50)*50;
+const rx=d=>RL+(d-250)/(360-250)*(RW-RL-RR),ry=v=>RT+(RM-v)/RM*(RHt-RT-RB);
+for(let v=0;v<=RM;v+=RM/4){el('line',{x1:RL,x2:RW-RR,y1:ry(v),y2:ry(v),stroke:'var(--grid)'},rsvg);const t=el('text',{x:RL-6,y:ry(v)+3,'font-size':10,'text-anchor':'end',fill:'var(--muted)'},rsvg);t.textContent=v}
+for(const d of [260,290,320,350]){const t=el('text',{x:rx(d),y:RHt-8,'font-size':10,'text-anchor':'middle',fill:'var(--muted)'},rsvg);t.textContent='Day '+d}
+const path=(pts)=>pts.map((p,i)=>(i?'L':'M')+rx(p[0]).toFixed(1)+' '+ry(p[1]).toFixed(1)).join('');
+el('path',{d:path(D.rul.map(r=>[r[0],r[1]])),fill:'none',stroke:'var(--s1)','stroke-width':2},rsvg);
+const pr=D.rul.filter(r=>r[2]!==null);
+el('path',{d:path(pr.map(r=>[r[0],r[2]])),fill:'none',stroke:'var(--s2)','stroke-width':2},rsvg);
+const rc=el('line',{y1:RT,y2:RHt-RB,stroke:'var(--ink)','stroke-width':1.5,visibility:'hidden'},rsvg);
+rsvg.addEventListener('mousemove',ev=>{const b=rsvg.getBoundingClientRect(),d=Math.round(((ev.clientX-b.left)/b.width*RW-RL)/(RW-RL-RR)*110+250),r=D.rul.find(q=>q[0]===d);if(!r)return hideTip();
+ showTip(ev,`<b>Day ${d}</b><br>True ${r[1].toFixed(1)} days<br>Predicted ${r[2]===null?'not yet':r[2].toFixed(1)+' days'}`)});
+rsvg.addEventListener('mouseleave',hideTip);
+
+// scores
+$('#score tbody').innerHTML=D.score.map(r=>`<tr><td>${r[0]}</td><td class="n">${r[1]}/59</td><td class="n">${r[2]}</td><td class="n">${r[3]}</td></tr>`).join('');
+
+// commands
+$('#csat').add(new Option('All satellites',-1));S.forEach((s,i)=>$('#csat').add(new Option(s,i)));
+const merged=[];D.cmdT.forEach((a,i)=>a.forEach((t,k)=>merged.push([t,i,D.cmdC[i][k]])));merged.sort((a,b)=>a[0]-b[0]);
+const mT=merged.map(m=>m[0]);
+function updateFeed(){const n=bisect(mT,day*86400),f=+$('#csat').value,out=[];
+ for(let k=n-1;k>=0&&out.length<16;k--){const m=merged[k];if(f>=0&&m[1]!==f)continue;
+  out.push(`<li><time>${(m[0]/86400).toFixed(3)}</time><span class="dot" style="background:${COL[m[1]]}"></span><span>${S[m[1]]}</span><b>${D.cmdNames[m[2]]}</b></li>`)}
+ $('#feed').innerHTML=out.join('')||'<li>No commands yet</li>';
+ $('#ccount').textContent=`${n.toLocaleString()} of ${merged.length.toLocaleString()} commands sent so far`}
+$('#csat').onchange=updateFeed;
+
+// events
+function cell(e,k){if(e.cat!=='A'||e.split!=='test')return '<td class="no">-</td>';return e[k]?'<td class="yes">✓ Caught</td>':'<td class="no">✕ Missed</td>'}
+let lastN=-1;
+function updateEvents(force){const all=$('#efilter').value==='all',L=D.events.filter(e=>e.a<=day&&(all||e.cat==='A'));
+ if(!force&&L.length===lastN)return;lastN=L.length;
+ $('#events tbody').innerHTML=L.slice().reverse().map(e=>`<tr><td>${e.a.toFixed(2)}</td><td>${S[e.s]}</td><td>${e.name}${e.comp?' ('+e.comp+')':''}</td><td>${e.split==='test'?'Test':'Train'}</td>${cell(e,'solo')}${cell(e,'fed')}${cell(e,'pers')}</tr>`).join('')}
+$('#efilter').onchange=()=>updateEvents(true);
+
+// jump list
+$('#jump').add(new Option('Choose a moment',''));
+D.jumps.forEach(j=>$('#jump').add(new Option(j[1],j[0])));
+$('#jump').onchange=e=>{if(e.target.value!=='')setDay(+e.target.value);e.target.value=''};
+
+function updateCursor(){tcur.setAttribute('x1',tx(day));tcur.setAttribute('x2',tx(day));cc.setAttribute('x1',cx(day));cc.setAttribute('x2',cx(day));
+ if(day>=250&&day<=360){rc.setAttribute('visibility','visible');rc.setAttribute('x1',rx(day));rc.setAttribute('x2',rx(day))}else rc.setAttribute('visibility','hidden')}
+function render(){$('#clock').textContent='Day '+day.toFixed(2);$('#date').textContent=fmtDate(day);$('#phase').textContent=phase(day);$('#slider').value=day;updateCards();updateCursor();updateFeed();updateEvents()}
+function setDay(d){day=Math.max(0,Math.min(DAYS,d));render()}
+$('#slider').oninput=e=>setDay(+e.target.value);
+function toggle(){playing=!playing;$('#play').textContent=playing?'Pause':'Play';last=performance.now();if(playing){if(day>=DAYS)day=0;requestAnimationFrame(tick)}}
+$('#play').onclick=toggle;
+addEventListener('keydown',e=>{if(e.code==='Space'&&!['SELECT','INPUT','BUTTON'].includes(document.activeElement.tagName)){e.preventDefault();toggle()}});
+function tick(t){if(!playing)return;const dt=(t-last)/1000;last=t;day+=dt*+$('#speed').value;if(day>=DAYS){day=DAYS;toggle()}render();requestAnimationFrame(tick)}
+drawTele();render();
+</script>
+</body>
+</html>

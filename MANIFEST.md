@@ -7,9 +7,12 @@ The work is stored in two places:
 | Place | Contents | Size |
 |---|---|---|
 | This git repository | Code, reports, results, logs, labels, package lists | About 6 MB |
-| GitHub Release `v1.0-data` | Full datasets, physics records, models, forecast errors | 15.7 GB in 8 pieces |
+| GitHub Release `Dataset` | Full datasets, physics records, models, forecast errors | 15.7 GB in 8 pieces |
+| GitHub Release `v1.1-vizard` | Whole-year Vizard replay files | 5.3 GB in 9 files |
 
 A `git clone` does not download Release files. Download them separately.
+
+**To view the simulation,** see `viz/README.md`. The short Vizard clips and the Mission Replay page are in git. The whole-year Vizard files go in `v1.1-vizard`, under `viz/large/`.
 
 ## In the repository
 
@@ -33,6 +36,8 @@ A `git clone` does not download Release files. Download them separately.
 | `results/paper_readiness_review.md` | Paper readiness review |
 | `results/project_synthesis_review.md` | Whole-project review and related work |
 | `results/release_SHA256SUMS.txt` | Fingerprints of the 8 Release pieces |
+| `viz/` | Viewing guide, Mission Replay page, short Vizard clips, and verification results |
+| `sim/viz_replay.py`, `sim/viz_check.py`, `sim/viz_dashboard.py` | Build and check the Vizard files and Mission Replay |
 
 ## In the Release
 
@@ -67,7 +72,7 @@ Total: 1,176 files and 21.6 GB before compression.
 Run these inside a clone of the repository:
 
 ```bash
-gh release download v1.0-data --repo shreyas-kodithyala/capstone_pr
+gh release download Dataset --repo shreyas-kodithyala/capstone_pr
 shasum -a 256 -c SHA256SUMS.txt
 cat capstone_data.tar.gz.part-* | tar -xzf -
 ```

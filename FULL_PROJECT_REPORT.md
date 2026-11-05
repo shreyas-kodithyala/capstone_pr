@@ -28,6 +28,7 @@ Written 5 Nov 2026 as the complete handover for a new chat. It covers everything
 18. Open problems and next steps
 19. Rules and working preferences
 20. Questions raised in the review chat
+21. Vizard and Mission Replay
 
 ## 1. Project in brief
 
@@ -885,3 +886,16 @@ This keeps the context from the final review chat, which a new chat will not oth
 Other questions from earlier in the project covered the three papers, Atefrad & Karami, and how to stand out. Those answers are in `results/project_synthesis_review.md`.
 
 The user's question on how personalization works is answered in section 8, and the question on model changes in section 6.
+
+## 21. Vizard and Mission Replay
+
+The final fleet can be shown to a panel in two ways. `viz/README.md` has the viewing steps.
+
+- **Vizard files** replay the saved Basilisk records in 3D. Nothing is simulated again. There are 8 clips at the full 5-second record, plus whole-year files at 30 or 60 seconds.
+- **Mission Replay** (`viz/mission_replay.html`) is an offline page that plays all 365 days, with all 46,288 telecommands, all 147 labelled events, telemetry, RUL and the final scores.
+
+**Shared frame:** each satellite's record is stored in a frame that turns with its own orbit. The replay rotates them into one inertial frame, so the Sun, eclipses and Earth rotation match the simulator.
+
+**Checks:** `sim/viz_check.py` decodes each file without Vizard and compares sampled frames with the saved records. Results are in `viz/verification.json`. The files have not yet been opened in Vizard itself.
+
+**Limits:** Vizard shows motion and wheels, not telemetry charts. Sensor, power and thermal faults do not change the motion. False-alarm times were not stored, so Mission Replay gives false alarms only as totals.

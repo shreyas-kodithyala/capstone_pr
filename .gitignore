@@ -14,3 +14,7 @@ __pycache__/
 
 # self-contained toolchain for a borrowed machine (conda envs, caches, temp)
 .localenv/
+
+# whole-year Vizard replays: too large for git, stored in the GitHub Release
+viz/large/
+viz/clips/test.bin

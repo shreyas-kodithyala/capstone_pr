@@ -5,8 +5,12 @@ it is, and what is next**, so work can resume from here. The newest status is at
 
 ## 0. Status (newest first)
 
+**Vizard and Mission Replay, 5 Nov 2026.** `viz/README.md` is the guide. `sim/viz_replay.py` replays the saved final-fleet records into Vizard `.bin` files, and `sim/viz_dashboard.py` builds the offline page `viz/mission_replay.html`. No simulation or scoring was rerun. Files were checked by decoding (`sim/viz_check.py`, `viz/verification.json`) but have not been opened in Vizard. Whole-year files live in `viz/large/` (gitignored) for Release `v1.1-vizard`.
+- **Machine rule learned:** running 17 file checks at once, each reading whole files, likely overloaded the machine and interrupted the session. Keep this kind of work to one low-priority streaming job, and keep the machine usable throughout.
+- **Left behind:** `viz/clips/test.bin` is a small test file, kept out of git. A safety check blocked its removal. `.localenv/pw` holds a headless browser used to test the page; it's ignored by git.
+
 **Full handover, 5 Nov 2026.** `FULL_PROJECT_REPORT.md` is now the complete report and `MANIFEST.md` says where every file is. Use them over older counts in sections 1-2 of this file.
-- **Storage:** code and small results go in git. `data/`, `fed/out_final`, `fed/out_v2` and `fed/out_w60` were packed into 8 pieces (15.7 GB, 1,176 files) for GitHub Release `v1.0-data`. All 8 checksums passed, and every file read back from the pieces matched the original byte for byte (`results/audit/verify_release.log`).
+- **Storage:** code and small results go in git. `data/`, `fed/out_final`, `fed/out_v2` and `fed/out_w60` were packed into 8 pieces (15.7 GB, 1,176 files) for GitHub Release `Dataset`. All 8 checksums passed, and every file read back from the pieces matched the original byte for byte (`results/audit/verify_release.log`).
 - **Added to git-tracked folders:** `results/dataset_meta/` (labels and truth), `results/logs/`, `results/audit/scratch/`, more final outputs in `results/final/`, generated `all_metrics.md` and `per_event_detection.csv`, and exact package lists in `envs/localenv_*`. No models were retrained and no scores changed.
 - **Newly highlighted from the partial audit log:** shifting all alarms 70 rows later lowers scores sharply (for example FL + personalization on SAT_1, .892 to .357 on all events). This is a diagnostic, but it shows the scores depend on alarm timing.
 - **Still stale:** `CLAUDE.md` and `REPORT.md` still say "beats every published result". The user has not asked for them to be edited.

@@ -1,0 +1,446 @@
+[
+ {
+  "file": "clip1_fleet_day200.bin",
+  "size_mb": 9.4,
+  "frames": 4319,
+  "satellites": [
+   "SAT_1",
+   "SAT_2",
+   "SAT_3",
+   "SAT_4"
+  ],
+  "first_day": 200.0,
+  "last_sampled_day": 200.247,
+  "popups": 44,
+  "status_colours": 2,
+  "sampled": 44,
+  "worst_difference": {
+   "position_m": 9.313225746154785e-10,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 0.0
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001,
+   0.001,
+   0.001,
+   0.0
+  ],
+  "peak_memory_gb": 0.38
+ },
+ {
+  "file": "clip2_SAT_4_imaging.bin",
+  "size_mb": 1.7,
+  "frames": 2159,
+  "satellites": [
+   "SAT_4"
+  ],
+  "first_day": 250.0,
+  "last_sampled_day": 250.124,
+  "popups": 8,
+  "status_colours": 2,
+  "sampled": 22,
+  "worst_difference": {
+   "position_m": 9.313225746154785e-10,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 0.0
+  },
+  "median_deg_body_x_to_vertical": [
+   0.0
+  ],
+  "peak_memory_gb": 0.39
+ },
+ {
+  "file": "clip3_SAT_4_gyro_calibration.bin",
+  "size_mb": 1.1,
+  "frames": 1381,
+  "satellites": [
+   "SAT_4"
+  ],
+  "first_day": 225.38,
+  "last_sampled_day": 225.459,
+  "popups": 2,
+  "status_colours": 2,
+  "sampled": 14,
+  "worst_difference": {
+   "position_m": 9.313225746154785e-10,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 0.0
+  },
+  "median_deg_body_x_to_vertical": [
+   0.0
+  ],
+  "peak_memory_gb": 0.4
+ },
+ {
+  "file": "clip4_SAT_4_safe_drill.bin",
+  "size_mb": 2.8,
+  "frames": 3455,
+  "satellites": [
+   "SAT_4"
+  ],
+  "first_day": 246.57,
+  "last_sampled_day": 246.767,
+  "popups": 12,
+  "status_colours": 2,
+  "sampled": 35,
+  "worst_difference": {
+   "position_m": 9.313225746154785e-10,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 0.0
+  },
+  "median_deg_body_x_to_vertical": [
+   57.407
+  ],
+  "peak_memory_gb": 0.4
+ },
+ {
+  "file": "clip5_SAT_1_friction_spike.bin",
+  "size_mb": 2.3,
+  "frames": 2936,
+  "satellites": [
+   "SAT_1"
+  ],
+  "first_day": 204.74,
+  "last_sampled_day": 204.909,
+  "popups": 3,
+  "status_colours": 2,
+  "sampled": 30,
+  "worst_difference": {
+   "position_m": 9.313225746154785e-10,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.2051296627291208e-09
+  },
+  "median_deg_body_x_to_vertical": [
+   0.048
+  ],
+  "peak_memory_gb": 0.4
+ },
+ {
+  "file": "clip6_SAT_3_wheel_dropout.bin",
+  "size_mb": 0.8,
+  "frames": 1036,
+  "satellites": [
+   "SAT_3"
+  ],
+  "first_day": 267.53,
+  "last_sampled_day": 267.586,
+  "popups": 3,
+  "status_colours": 2,
+  "sampled": 10,
+  "worst_difference": {
+   "position_m": 9.313225746154785e-10,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 0.0
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001
+  ],
+  "peak_memory_gb": 0.4
+ },
+ {
+  "file": "clip7_SAT_2_wear_spike.bin",
+  "size_mb": 1.9,
+  "frames": 2418,
+  "satellites": [
+   "SAT_2"
+  ],
+  "first_day": 286.84,
+  "last_sampled_day": 286.975,
+  "popups": 1,
+  "status_colours": 2,
+  "sampled": 24,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 0.0
+  },
+  "median_deg_body_x_to_vertical": [
+   0.008
+  ],
+  "peak_memory_gb": 0.4
+ },
+ {
+  "file": "clip8_SAT_2_wheel_failure.bin",
+  "size_mb": 3.4,
+  "frames": 4319,
+  "satellites": [
+   "SAT_2"
+  ],
+  "first_day": 356.02,
+  "last_sampled_day": 356.267,
+  "popups": 14,
+  "status_colours": 2,
+  "sampled": 44,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 0.0
+  },
+  "median_deg_body_x_to_vertical": [
+   0.01
+  ],
+  "peak_memory_gb": 0.42
+ },
+ {
+  "file": "fleet_Q1_60s.bin",
+  "size_mb": 284.5,
+  "frames": 131039,
+  "satellites": [
+   "SAT_1",
+   "SAT_2",
+   "SAT_3",
+   "SAT_4"
+  ],
+  "first_day": 0.0,
+  "last_sampled_day": 90.938,
+  "popups": 25,
+  "status_colours": 4,
+  "sampled": 1350,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.4146794846681132e-11
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001,
+   0.001,
+   0.001,
+   0.0
+  ],
+  "peak_memory_gb": 0.71
+ },
+ {
+  "file": "fleet_Q2_60s.bin",
+  "size_mb": 284.5,
+  "frames": 131039,
+  "satellites": [
+   "SAT_1",
+   "SAT_2",
+   "SAT_3",
+   "SAT_4"
+  ],
+  "first_day": 91.0,
+  "last_sampled_day": 181.938,
+  "popups": 35,
+  "status_colours": 4,
+  "sampled": 1350,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.3524815711818405e-09
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001,
+   0.001,
+   0.001,
+   0.0
+  ],
+  "peak_memory_gb": 0.78
+ },
+ {
+  "file": "fleet_Q3_60s.bin",
+  "size_mb": 284.5,
+  "frames": 131039,
+  "satellites": [
+   "SAT_1",
+   "SAT_2",
+   "SAT_3",
+   "SAT_4"
+  ],
+  "first_day": 182.0,
+  "last_sampled_day": 272.938,
+  "popups": 39,
+  "status_colours": 4,
+  "sampled": 1350,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.2568417417924138e-09
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001,
+   0.001,
+   0.001,
+   0.0
+  ],
+  "peak_memory_gb": 0.8
+ },
+ {
+  "file": "fleet_Q4_60s.bin",
+  "size_mb": 287.5,
+  "frames": 132479,
+  "satellites": [
+   "SAT_1",
+   "SAT_2",
+   "SAT_3",
+   "SAT_4"
+  ],
+  "first_day": 273.0,
+  "last_sampled_day": 364.949,
+  "popups": 52,
+  "status_colours": 6,
+  "sampled": 1365,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.0874412481598483e-11
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001,
+   0.035,
+   0.001,
+   0.0
+  ],
+  "peak_memory_gb": 0.8
+ },
+ {
+  "file": "SAT_1_year_30s.bin",
+  "size_mb": 841.6,
+  "frames": 1051199,
+  "satellites": [
+   "SAT_1"
+  ],
+  "first_day": 0.0,
+  "last_sampled_day": 364.997,
+  "popups": 11613,
+  "status_colours": 4,
+  "sampled": 10837,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 2.876476834501318e-12
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001
+  ],
+  "peak_memory_gb": 1.37
+ },
+ {
+  "file": "SAT_2_year_30s.bin",
+  "size_mb": 841.3,
+  "frames": 1051199,
+  "satellites": [
+   "SAT_2"
+  ],
+  "first_day": 0.0,
+  "last_sampled_day": 364.997,
+  "popups": 10183,
+  "status_colours": 6,
+  "sampled": 10837,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.52424739496837e-11
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001
+  ],
+  "peak_memory_gb": 1.37
+ },
+ {
+  "file": "SAT_3_year_30s.bin",
+  "size_mb": 841.2,
+  "frames": 1051199,
+  "satellites": [
+   "SAT_3"
+  ],
+  "first_day": 0.0,
+  "last_sampled_day": 364.997,
+  "popups": 5025,
+  "status_colours": 4,
+  "sampled": 10837,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.351095457735596e-09
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001
+  ],
+  "peak_memory_gb": 1.37
+ },
+ {
+  "file": "SAT_4_year_30s.bin",
+  "size_mb": 842.1,
+  "frames": 1051199,
+  "satellites": [
+   "SAT_4"
+  ],
+  "first_day": 0.0,
+  "last_sampled_day": 364.997,
+  "popups": 19627,
+  "status_colours": 4,
+  "sampled": 10837,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.4125400848996605e-09
+  },
+  "median_deg_body_x_to_vertical": [
+   0.0
+  ],
+  "peak_memory_gb": 1.37
+ },
+ {
+  "file": "fleet_year_60s.bin",
+  "size_mb": 1140.9,
+  "frames": 525599,
+  "satellites": [
+   "SAT_1",
+   "SAT_2",
+   "SAT_3",
+   "SAT_4"
+  ],
+  "first_day": 0.0,
+  "last_sampled_day": 364.963,
+  "popups": 151,
+  "status_colours": 6,
+  "sampled": 5418,
+  "worst_difference": {
+   "position_m": 1.862645149230957e-09,
+   "wheel_rad_s": 0.0,
+   "earth_rotation": 0.0,
+   "sun_m": 0.0,
+   "eclipse": 1.3009735511104736e-09
+  },
+  "median_deg_body_x_to_vertical": [
+   0.001,
+   0.001,
+   0.001,
+   0.0
+  ],
+  "peak_memory_gb": 1.67
+ }
+]
